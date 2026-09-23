@@ -1430,84 +1430,407 @@
   <script src="js/forms.js"></script>
   <script src="js/whatsapp.js"></script>
 
-  <script>
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
 
-    document.addEventListener("DOMContentLoaded", () => {
+    const track =
+        document.querySelector(".gallery-track");
 
-      const track =
-          document.querySelector(".gallery-track");
+    const cards =
+        document.querySelectorAll(
+            ".wooden-frame-wrapper"
+        );
 
-      const cards =
-          document.querySelectorAll(
-              ".wooden-frame-wrapper"
-          );
-
-      if (!track || !cards.length) return;
-
-
-      let currentIndex = 0;
+    if (!track || cards.length === 0) return;
 
 
-      function isMobile() {
-          return window.innerWidth <= 768;
-      }
+    /* =========================================
+       SETTINGS
+    ========================================= */
+
+    const GAP = 18;
+
+    const AUTO_DELAY = 4500;
+
+    const SWIPE_THRESHOLD = 50;
 
 
-      function moveCards() {
+    /* =========================================
+       STATE
+    ========================================= */
 
-          if (!isMobile()) {
+    let currentIndex = 0;
+
+    let autoSlideTimer = null;
+
+    let startX = 0;
+
+    let startY = 0;
+
+    let isDragging = false;
+
+
+    /* =========================================
+       MOBILE CHECK
+    ========================================= */
+
+    function isMobile() {
+
+        return window.innerWidth <= 768;
+
+    }
+
+
+    /* =========================================
+       MOVE TO CARD
+    ========================================= */
+
+    function moveToCard(index, animate = true) {
+
+        if (!isMobile()) {
+
             track.style.transform =
                 "translateX(0)";
 
             return;
-          }
+        }
 
+
+        /*
+         * Keep index inside available cards
+         */
+
+        if (index < 0) {
+
+            index = cards.length - 1;
+
+        }
+
+        if (index >= cards.length) {
+
+            index = 0;
+
+        }
+
+
+        currentIndex = index;
+
+
+        /*
+         * Get actual card width
+         */
 
         const cardWidth =
-            cards[0].offsetWidth;
-
-        const gap = 18;
-
-
-        currentIndex++;
-
-
-        if (currentIndex >= cards.length) {
-            currentIndex = 0;
-        }
+            cards[0].getBoundingClientRect().width;
 
 
         const distance =
             currentIndex *
-            (cardWidth + gap);
+            (cardWidth + GAP);
+
+
+        /*
+         * Temporarily disable animation
+         * when requested.
+         */
+
+        if (!animate) {
+
+            track.style.transition = "none";
+
+        } else {
+
+            track.style.transition =
+                "transform 0.75s cubic-bezier(0.22, 1, 0.36, 1)";
+
+        }
 
 
         track.style.transform =
-            `translateX(-${distance}px)`;
+            `translate3d(-${distance}px, 0, 0)`;
+
+
+        /*
+         * Restore transition after instant move.
+         */
+
+        if (!animate) {
+
+            requestAnimationFrame(() => {
+
+                requestAnimationFrame(() => {
+
+                    track.style.transition =
+                        "transform 0.75s cubic-bezier(0.22, 1, 0.36, 1)";
+
+                });
+
+            });
+
+        }
+
     }
 
 
-    setInterval(moveCards, 4500);
+    /* =========================================
+       AUTOMATIC SLIDE
+    ========================================= */
+
+    function startAutoSlide() {
+
+        stopAutoSlide();
 
 
-    window.addEventListener(
-        "resize",
-        () => {
+        autoSlideTimer =
+            setInterval(() => {
 
-            if (!isMobile()) {
+                if (!isMobile()) return;
 
-                currentIndex = 0;
+                if (isDragging) return;
 
-                track.style.transform =
-                    "translateX(0)";
+
+                moveToCard(
+                    currentIndex + 1,
+                    true
+                );
+
+            }, AUTO_DELAY);
+    }
+
+
+    function stopAutoSlide() {
+
+        if (autoSlideTimer) {
+
+            clearInterval(autoSlideTimer);
+
+            autoSlideTimer = null;
+
+        }
+
+    }
+
+
+    /* =========================================
+       TOUCH / POINTER START
+    ========================================= */
+
+    track.addEventListener(
+        "pointerdown",
+        (event) => {
+
+            if (!isMobile()) return;
+
+
+            isDragging = true;
+
+
+            startX = event.clientX;
+
+            startY = event.clientY;
+
+
+            stopAutoSlide();
+
+
+            track.classList.add(
+                "is-dragging"
+            );
+
+
+            /*
+             * Capture the pointer so the gesture
+             * continues even if the finger moves.
+             */
+
+            track.setPointerCapture(
+                event.pointerId
+            );
+
+        }
+    );
+
+
+    /* =========================================
+       POINTER MOVE
+    ========================================= */
+
+    track.addEventListener(
+        "pointermove",
+        (event) => {
+
+            if (!isDragging) return;
+
+            if (!isMobile()) return;
+
+
+            const deltaX =
+                event.clientX - startX;
+
+            const deltaY =
+                event.clientY - startY;
+
+
+            /*
+             * If movement is mainly vertical,
+             * let the page scroll normally.
+             */
+
+            if (
+                Math.abs(deltaY) >
+                Math.abs(deltaX)
+            ) {
+
+                return;
+
             }
 
         }
     );
 
-  });
 
-  </script>
+    /* =========================================
+       POINTER END
+    ========================================= */
+
+    track.addEventListener(
+        "pointerup",
+        (event) => {
+
+            if (!isDragging) return;
+
+
+            isDragging = false;
+
+
+            track.classList.remove(
+                "is-dragging"
+            );
+
+
+            const endX =
+                event.clientX;
+
+
+            const difference =
+                startX - endX;
+
+
+            /* =================================
+               SWIPE LEFT
+               Finger moved left
+            ================================= */
+
+            if (
+                difference >
+                SWIPE_THRESHOLD
+            ) {
+
+                moveToCard(
+                    currentIndex + 1,
+                    true
+                );
+
+            }
+
+
+            /* =================================
+               SWIPE RIGHT
+               Finger moved right
+            ================================= */
+
+            else if (
+                difference <
+                -SWIPE_THRESHOLD
+            ) {
+
+                moveToCard(
+                    currentIndex - 1,
+                    true
+                );
+
+            }
+
+
+            /*
+             * Small movement = no swipe.
+             * Keep current card.
+             */
+
+
+            startAutoSlide();
+
+        }
+    );
+
+
+    /* =========================================
+       POINTER CANCEL
+    ========================================= */
+
+    track.addEventListener(
+        "pointercancel",
+        () => {
+
+            isDragging = false;
+
+            track.classList.remove(
+                "is-dragging"
+            );
+
+            startAutoSlide();
+
+        }
+    );
+
+
+    /* =========================================
+       RESIZE
+    ========================================= */
+
+    window.addEventListener(
+        "resize",
+        () => {
+
+            if (isMobile()) {
+
+                moveToCard(
+                    currentIndex,
+                    false
+                );
+
+            } else {
+
+                stopAutoSlide();
+
+                currentIndex = 0;
+
+                track.style.transform =
+                    "translateX(0)";
+
+            }
+
+        }
+    );
+
+
+    /* =========================================
+       START
+    ========================================= */
+
+    if (isMobile()) {
+
+        moveToCard(
+            0,
+            false
+        );
+
+        startAutoSlide();
+
+    }
+
+});
+</script>
 
   <script>
     const drawer =
