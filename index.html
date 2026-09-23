@@ -87,10 +87,19 @@
       z-index: var(--z-drawer);
       box-shadow: -10px 0 30px rgba(13, 40, 28, 0.2);
       transform: translateX(100%);
-      transition: transform var(--transition-normal);
+      /*transition: transform var(--transition-normal);  */
+      transition: 
+               transform 0.4s cubic-bezier(
+                0.22,
+                1,
+                0.36,
+                1
+               );
       display: flex;
       flex-direction: column;
       overflow-y: auto;
+      overflow-x: hidden;
+      box-shadow: -15px 0 45px rgba(0, 0, 0, 0.18);
     }
     .mobile-nav-drawer.active {
       transform: translateX(0);
@@ -149,6 +158,32 @@
       width: auto;
       display: block;
     }
+
+
+  .drawer-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 25, 18, 0.35);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: 
+             opacity 0.3s ease,
+             visibility 0.3s ease;
+
+    z-index: calc(var(--z-drawer)-1);         
+  }  
+
+  .drawer-overlay.active{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+
+  
   </style>
 </head>
 <body>
@@ -241,6 +276,9 @@
   </header>
 
   <!-- Droo ya Simu -->
+
+   <div class="drawer-overlay" id="drawerOverlay"></div>
+
   <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
     <div class="mobile-drawer-header">
       <img src="assets/images/logo.png" alt="LOMA Adventures" height="46">
@@ -1387,5 +1425,25 @@
   <script src="js/save-compare.js"></script>
   <script src="js/forms.js"></script>
   <script src="js/whatsapp.js"></script>
+  <script>
+    const drawer =
+           document.getElementById("mobileDrawer");
+    const overlay = 
+          document.getElementById("drawerOverlay");
+    const closeButton = 
+          document.getElemntById("drawerClose");
+          
+    function openDrawer() {
+      drawer.classList.add("active");
+      overlay.classList.add("active");
+      document.body.classList.add("drawer-open");
+    }      
+
+    function closeDrawer() {
+      drawer.classList.remove("active");
+      overlay.classList.remove("active");
+      document.body.classList.remove("drawer-open");
+    }
+  </script>
 </body>
 </html>
