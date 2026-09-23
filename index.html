@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    ============================================================
+    LOMA ADVENTURES — THE CURATED AFRICAN TRAVEL GALLERY
+    ============================================================
+    "Explore. Learn. Experience. Create Memories."
+    Logo Tagline: "Explore More. Live the Journey."
+
+    Mfumo wa tovuti unaojumuisha:
+    1. Hero ya kishindo yenye picha ya ndani ya 4K na kaulimbiu kuu
+    2. "Why LOMA" — Nguzo 5 za utofautisho (Experience, Culture, Personalization, Education, Memories)
+    3. Authentic Experiences — Mfumo halisi wa picha zilizomo kwenye viunzi vya mbao (Wooden Frame Artwork)
+    4. Destinations Discovery na Handpicked Tour Packages
+    5. Interactive Trip Planner & Custom Trip Builder Simulator
+    6. Responsible Tourism & Sustainable Conservation Pledge
+    7. Editorial Travel Stories & Journal
+    8. International Travel Center, 12-Month Matrix, na Packing Assistant
+    9. Footer yenye Nembo ya Mandhari Nyeupe (logo-white-bg.jpg)
+    10. Kitufe cha 3D cha WhatsApp chenye ujumbe wa muktadha
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOMA Adventures | Explore. Learn. Experience. Create Memories.</title>
+  <meta name="description" content="Discover authentic Tanzania with LOMA Adventures. Curated African safaris in Serengeti, Mount Kilimanjaro climbs, Zanzibar beach retreats, and meaningful cultural journeys.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <style>
+    .mobile-nav-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      max-width: 360px;
+      height: 100vh;
+      background: var(--color-surface);
+      z-index: var(--z-drawer);
+      box-shadow: -10px 0 30px rgba(13, 40, 28, 0.2);
+      transform: translateX(100%);
+      transition: transform var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .mobile-nav-drawer.active {
+      transform: translateX(0);
+    }
+    .mobile-drawer-header {
+      padding: var(--space-md) var(--space-lg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .mobile-drawer-body {
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .mobile-link {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-primary-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .mobile-sub-menu {
+      display: none;
+      padding-left: 1rem;
+      margin-top: 0.5rem;
+      border-left: 2px solid var(--color-accent);
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .mobile-nav-expandable.expanded .mobile-sub-menu {
+      display: flex;
+    }
+    .mobile-sub-link {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+    .mobile-sub-link:hover {
+      color: var(--color-accent);
+    }
+
+    /* Muundo wa Footer yenye Nembo ya White Background */
+    .footer-white-card-logo {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 10px 14px;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      margin-bottom: var(--space-md);
+    }
+    .footer-white-card-logo img {
+      height: 58px;
+      width: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ufikiaji (Accessibility Skip Link) -->
+  <a href="#mainContent" class="skip-to-content">Skip to main content</a>
+
+  <!-- ============================================================
+       1. HEADER & TOP NAVIGATION
+       ============================================================ -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="LOMA Adventures Homepage">
+        <img src="assets/images/logo.png" alt="LOMA Adventures - Explore More. Live the Journey." width="180" height="62">
+      </a>
+
+      <!-- Menyu ya Desktop -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+
+        <div class="nav-item-dropdown">
+          <a href="pages/safari.html" class="nav-link">Safari ▾</a>
+          <div class="dropdown-menu">
+            <a href="pages/safari.html#northern" class="dropdown-item">Northern Safari Circuit</a>
+            <a href="pages/safari.html#luxury" class="dropdown-item">Luxury Tented Safaris</a>
+            <a href="pages/safari.html#family" class="dropdown-item">Family Safari Adventures</a>
+            <a href="tours/7-day-northern-safari.html" class="dropdown-item">7-Day Signature Safari</a>
+          </div>
+        </div>
+
+        <div class="nav-item-dropdown">
+          <a href="pages/kilimanjaro.html" class="nav-link">Kilimanjaro ▾</a>
+          <div class="dropdown-menu">
+            <a href="pages/kilimanjaro.html#machame" class="dropdown-item">Machame Route (7 Days)</a>
+            <a href="pages/kilimanjaro.html#lemosho" class="dropdown-item">Lemosho Route (8 Days)</a>
+            <a href="pages/kilimanjaro.html#marangu" class="dropdown-item">Marangu Route (6 Days)</a>
+            <a href="pages/kilimanjaro.html#safety" class="dropdown-item">Summit Safety & Acclimatization</a>
+          </div>
+        </div>
+
+        <div class="nav-item-dropdown">
+          <a href="pages/zanzibar.html" class="nav-link">Zanzibar ▾</a>
+          <div class="dropdown-menu">
+            <a href="pages/zanzibar.html#beaches" class="dropdown-item">Tropical Coast & Beaches</a>
+            <a href="pages/zanzibar.html#stonetown" class="dropdown-item">Stone Town Heritage</a>
+            <a href="pages/zanzibar.html#activities" class="dropdown-item">Spice Tours & Ocean Safari</a>
+          </div>
+        </div>
+
+        <a href="pages/experiences.html" class="nav-link">Experiences</a>
+        <a href="pages/destinations.html" class="nav-link">Destinations</a>
+        <a href="pages/travel-guide.html" class="nav-link">Travel Guide</a>
+        <a href="pages/about.html" class="nav-link">About Us</a>
+        <a href="pages/contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Vitendo vya Header -->
+      <div class="header-actions">
+        <button type="button" class="search-trigger-btn" aria-label="Open search dialog">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <div class="lang-selector" title="Language selection">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span>EN</span>
+        </div>
+
+        <a href="#planner" class="btn btn-primary btn-sm">
+          Plan Your Trip
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle mobile navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Droo ya Simu -->
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <div class="mobile-drawer-header">
+      <img src="assets/images/logo.png" alt="LOMA Adventures" height="46">
+      <button type="button" id="closeMobileDrawer" style="font-size: 1.5rem; color: var(--color-primary-dark);">&times;</button>
+    </div>
+    <div class="mobile-drawer-body">
+      <a href="index.html" class="mobile-link">Home</a>
+
+      <div class="mobile-nav-expandable">
+        <a href="#" class="mobile-link mobile-link-head">Safari <span>+</span></a>
+        <div class="mobile-sub-menu">
+          <a href="pages/safari.html#northern" class="mobile-sub-link">Northern Safari Circuit</a>
+          <a href="pages/safari.html#luxury" class="mobile-sub-link">Luxury Tented Safari</a>
+          <a href="pages/safari.html#family" class="mobile-sub-link">Family Safari</a>
+          <a href="tours/7-day-northern-safari.html" class="mobile-sub-link">7-Day Signature Safari</a>
+        </div>
+      </div>
+
+      <div class="mobile-nav-expandable">
+        <a href="#" class="mobile-link mobile-link-head">Kilimanjaro <span>+</span></a>
+        <div class="mobile-sub-menu">
+          <a href="pages/kilimanjaro.html#machame" class="mobile-sub-link">Machame Route</a>
+          <a href="pages/kilimanjaro.html#lemosho" class="mobile-sub-link">Lemosho Route</a>
+          <a href="pages/kilimanjaro.html#marangu" class="mobile-sub-link">Marangu Route</a>
+        </div>
+      </div>
+
+      <div class="mobile-nav-expandable">
+        <a href="#" class="mobile-link mobile-link-head">Zanzibar <span>+</span></a>
+        <div class="mobile-sub-menu">
+          <a href="pages/zanzibar.html#beaches" class="mobile-sub-link">Beaches & Resorts</a>
+          <a href="pages/zanzibar.html#stonetown" class="mobile-sub-link">Stone Town</a>
+          <a href="pages/zanzibar.html#activities" class="mobile-sub-link">Ocean Excursions</a>
+        </div>
+      </div>
+
+      <a href="pages/experiences.html" class="mobile-link">Experiences</a>
+      <a href="pages/destinations.html" class="mobile-link">Destinations</a>
+      <a href="pages/travel-guide.html" class="mobile-link">Travel Guide</a>
+      <a href="pages/about.html" class="mobile-link">About Us</a>
+      <a href="pages/contact.html" class="mobile-link">Contact</a>
+
+      <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+        <a href="pages/contact.html" class="btn btn-primary" style="width: 100%;">Plan Your Custom Trip</a>
+        <button type="button" onclick="openWhatsAppChat()" class="btn btn-dark" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+          Chat on WhatsApp
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============================================================
+       MAUDHUI MAKUU (MAIN CONTENT)
+       ============================================================ -->
+  <main id="mainContent">
+
+    <!-- ============================================================
+         2. CINEMATIC HERO (LOCAL 4K ASSET)
+         ============================================================ -->
+    <section class="hero-section" aria-label="Hero Showcase">
+      <div class="container">
+        <div class="hero-content reveal-fade">
+          <div class="hero-pill-category">
+            <span>Tanzania</span>
+            <span>Africa</span>
+            <span>Est. 2019</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span>Explore. Learn.</span>
+            Experience. Create Memories.
+          </h1>
+
+          <p class="hero-subtitle">
+            Discover Tanzania through meaningful journeys shaped around nature, wildlife, culture, adventure, and the people who make every destination extraordinary.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#planner" class="btn btn-primary btn-lg">
+              Plan Your Journey
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#authentic-experiences" class="btn btn-secondary btn-lg">
+              Explore Experiences &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. TRIP PLANNER
+         ============================================================ -->
+    <section class="planner-wrapper" id="planner" aria-label="Trip Planner">
+      <div class="container">
+        <div class="planner-card">
+          <div class="planner-heading-mobile">Plan Your Trip</div>
+          <form id="tripPlannerForm" class="planner-form-grid">
+            <div class="planner-field">
+              <div class="planner-field-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="planner-field-content">
+                <label for="plannerDest" class="planner-field-label">Destination</label>
+                <select id="plannerDest" class="planner-field-select">
+                  <option value="all">All Tanzania Destinations</option>
+                  <option value="serengeti">Serengeti & Northern Parks</option>
+                  <option value="kilimanjaro">Mount Kilimanjaro Trek</option>
+                  <option value="zanzibar">Zanzibar Island Retreat</option>
+                  <option value="combined">Bush & Beach (Safari + Zanzibar)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="planner-field">
+              <div class="planner-field-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="planner-field-content">
+                <label for="plannerDuration" class="planner-field-label">Duration</label>
+                <select id="plannerDuration" class="planner-field-select">
+                  <option value="any">Select duration</option>
+                  <option value="3-5">3 - 5 Days</option>
+                  <option value="6-8" selected>6 - 8 Days (Recommended)</option>
+                  <option value="9-12">9 - 12 Days</option>
+                  <option value="14+">14+ Days Comprehensive</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="planner-field">
+              <div class="planner-field-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div class="planner-field-content">
+                <label for="plannerTravelers" class="planner-field-label">Travelers</label>
+                <select id="plannerTravelers" class="planner-field-select">
+                  <option value="1">1 Solo Traveler</option>
+                  <option value="2" selected>2 Travelers (Couple/Friends)</option>
+                  <option value="3-4">3 - 4 Family / Group</option>
+                  <option value="5+">5+ Private Group</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="planner-field">
+              <div class="planner-field-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <div class="planner-field-content">
+                <label for="plannerDate" class="planner-field-label">Travel Month</label>
+                <select id="plannerDate" class="planner-field-select">
+                  <option value="">Flexible / Anytime</option>
+                  <option value="jun-oct">Jun - Oct (Dry Season & Migration)</option>
+                  <option value="dec-feb">Dec - Feb (Calving & Warmth)</option>
+                  <option value="nov">November (Short Rains)</option>
+                  <option value="mar-may">Mar - May (Emerald Season)</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-dark" style="height: 52px; padding: 0 1.5rem;">
+              Find My Trip
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. TRUST SECTION
+         ============================================================ -->
+    <section class="trust-section" aria-label="Trust & Credentials">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <polyline points="9 12 11 14 15 10"></polyline>
+              </svg>
+            </div>
+            <div class="trust-text">
+              <h4>Safe & Trusted</h4>
+              <p>[Licensed Operator] in Tanzania</p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <polyline points="16 11 18 13 22 9"></polyline>
+              </svg>
+            </div>
+            <div class="trust-text">
+              <h4>Expert Guides</h4>
+              <p>Native wildlife & mountain specialists</p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 12h20"></path>
+                <path d="M20 12v8H4v-8"></path>
+                <path d="M12 2C6.5 2 2 6.5 2 12c0 2.5 1 4.5 2 6"></path>
+                <path d="M12 22c5.5 0 10-4.5 10-10 0-2.5-1-4.5-2-6"></path>
+              </svg>
+            </div>
+            <div class="trust-text">
+              <h4>Responsible Travel</h4>
+              <p>Supporting local Tanzanian communities</p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+              </svg>
+            </div>
+            <div class="trust-text">
+              <h4>24/7 Support</h4>
+              <p>Always with you from arrival to departure</p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <div class="trust-text">
+              <h4>5-Star Experiences</h4>
+              <p>Rated by our international guests</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. WHY LOMA (THE 5 CORE PILLARS OF DIFFERENTIATION)
+         ============================================================ -->
+    <section class="why-loma-section" aria-label="Why Choose LOMA Adventures">
+      <div class="container">
+        <div class="section-header-flex">
+          <div>
+            <span class="section-eyebrow">The LOMA Philosophy</span>
+            <h2 class="section-title">Why Travel With LOMA Adventures</h2>
+            <p class="section-desc">Born in 2019 from a family's deep-rooted passion for Tanzania. We believe tourism should be transformative, educational, and genuinely respectful.</p>
+          </div>
+        </div>
+
+        <div class="why-loma-grid">
+          <!-- Pillar 1 -->
+          <div class="why-loma-pillar reveal-fade">
+            <div class="pillar-number">01</div>
+            <h3 class="pillar-title">Experience Over Just Travel</h3>
+            <p class="pillar-desc">You are never just visiting a coordinate on a map. You are immersing in living ecosystems, sunrise stillness, and authentic wildlife encounters.</p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="why-loma-pillar reveal-fade delay-1">
+            <div class="pillar-number">02</div>
+            <h3 class="pillar-title">Culture & Community</h3>
+            <p class="pillar-desc">Genuine, respectful interactions with indigenous tribes, Maasai elders, and local Swahili coastal villages, benefiting community welfare directly.</p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="why-loma-pillar reveal-fade delay-2">
+            <div class="pillar-number">03</div>
+            <h3 class="pillar-title">Personalized Journeys</h3>
+            <p class="pillar-desc">No rigid group bus tours. Every itinerary is tailored around your specific pace, wildlife wishlist, budget, and travel expectations.</p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="why-loma-pillar reveal-fade delay-3">
+            <div class="pillar-number">04</div>
+            <h3 class="pillar-title">Education Through Travel</h3>
+            <p class="pillar-desc">Understand animal behaviors, African geology, ecosystem conservation, and human heritage through master native guides.</p>
+          </div>
+
+          <!-- Pillar 5 -->
+          <div class="why-loma-pillar reveal-fade delay-4">
+            <div class="pillar-number">05</div>
+            <h3 class="pillar-title">Memories That Last</h3>
+            <p class="pillar-desc">Leave with stories, emotions, breathtaking photographs, and a lifelong connection to the untamed spirit of Africa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. AUTHENTIC EXPERIENCES (WOODEN FRAME ARTWORK GALLERY)
+         ============================================================ -->
+    <section class="journal-section" id="authentic-experiences" aria-label="Curated Artwork Gallery">
+      <div class="container">
+        <div class="section-header-flex">
+          <div>
+            <span class="section-eyebrow">Curated African Travel Gallery</span>
+            <h2 class="section-title">Authentic Experiences</h2>
+            <p class="section-desc">Selected imagery presented inside bespoke gallery frames. A celebration of Tanzania's wildlife, high peaks, coral shores, and ancient cultures.</p>
+          </div>
+          <a href="pages/experiences.html" class="btn btn-outline-dark btn-sm">Explore All Experiences &rarr;</a>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg);">
+          <!-- Artwork 1: Wildlife Safaris -->
+          <article class="wooden-frame-wrapper reveal-fade">
+            <div class="wooden-frame-inner">
+              <div class="wooden-frame-artwork">
+                <img src="assets/images/hero-kilimanjaro.jpg" alt="Wildlife Safaris in Tanzania" loading="lazy">
+              </div>
+              <div class="wooden-frame-caption">
+                <span class="wooden-frame-category">Gallery Plate I</span>
+                <h3 class="wooden-frame-title">Wildlife Safaris</h3>
+                <p class="wooden-frame-desc">Get closer to Tanzania's wild landscapes and understand the ecosystems that make them extraordinary.</p>
+                <a href="pages/safari.html" class="wooden-frame-cta">Explore Safari Experiences &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Artwork 2: Kilimanjaro Climbing -->
+          <article class="wooden-frame-wrapper reveal-fade delay-1">
+            <div class="wooden-frame-inner">
+              <div class="wooden-frame-artwork">
+                <img src="assets/images/kilimanjaro-summit.jpg" alt="Kilimanjaro Summit Trek" loading="lazy">
+              </div>
+              <div class="wooden-frame-caption">
+                <span class="wooden-frame-category">Gallery Plate II</span>
+                <h3 class="wooden-frame-title">Kilimanjaro</h3>
+                <p class="wooden-frame-desc">Challenge yourself while experiencing one of Africa's most iconic landscapes and Uhuru Peak glaciers.</p>
+                <a href="pages/kilimanjaro.html" class="wooden-frame-cta">Explore Kilimanjaro &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Artwork 3: Zanzibar -->
+          <article class="wooden-frame-wrapper reveal-fade delay-2">
+            <div class="wooden-frame-inner">
+              <div class="wooden-frame-artwork">
+                <img src="assets/images/zanzibar-beach.jpg" alt="Zanzibar Turquoise Coast" loading="lazy">
+              </div>
+              <div class="wooden-frame-caption">
+                <span class="wooden-frame-category">Gallery Plate III</span>
+                <h3 class="wooden-frame-title">Zanzibar</h3>
+                <p class="wooden-frame-desc">Discover beaches, history, culture, food, and the rhythm of island life on the Swahili Coast.</p>
+                <a href="pages/zanzibar.html" class="wooden-frame-cta">Explore Zanzibar &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Artwork 4: Cultural Experiences -->
+          <article class="wooden-frame-wrapper reveal-fade delay-3">
+            <div class="wooden-frame-inner">
+              <div class="wooden-frame-artwork">
+                <img src="assets/images/tarangire-elephants.jpg" alt="Cultural Encounters and Heritage" loading="lazy">
+              </div>
+              <div class="wooden-frame-caption">
+                <span class="wooden-frame-category">Gallery Plate IV</span>
+                <h3 class="wooden-frame-title">Cultural Experiences</h3>
+                <p class="wooden-frame-desc">Meet communities, learn traditions, and understand Tanzania beyond the usual tourist route.</p>
+                <a href="pages/experiences.html" class="wooden-frame-cta">Explore Cultural Experiences &rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. ICONIC DESTINATIONS (LOCAL 4K ASSETS)
+         ============================================================ -->
+    <section class="destinations-section" aria-label="Destinations">
+      <div class="container">
+        <div class="section-header-flex">
+          <div>
+            <span class="section-eyebrow">Iconic Landscapes</span>
+            <h2 class="section-title">Explore Tanzania's Iconic Places</h2>
+            <p class="section-desc">From the endless golden plains of the Serengeti to the turquoise waters of Zanzibar, each destination offers a unique story.</p>
+          </div>
+          <a href="pages/destinations.html" class="btn btn-outline-dark btn-sm">View All Destinations &rarr;</a>
+        </div>
+
+        <div class="destinations-grid">
+          <!-- Serengeti -->
+          <a href="pages/destinations.html#serengeti" class="destination-card reveal-fade">
+            <img src="assets/images/serengeti-lions.jpg" alt="Serengeti National Park Lions" loading="lazy">
+            <div class="destination-card-overlay">
+              <h3 class="destination-card-title">Serengeti</h3>
+              <p class="destination-card-desc">The Great Migration & Endless Plains</p>
+              <span class="destination-card-link">Learn More &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Ngorongoro Crater -->
+          <a href="pages/destinations.html#ngorongoro" class="destination-card reveal-fade delay-1">
+            <img src="assets/images/ngorongoro-crater.jpg" alt="Ngorongoro Crater Caldera" loading="lazy">
+            <div class="destination-card-overlay">
+              <h3 class="destination-card-title">Ngorongoro Crater</h3>
+              <p class="destination-card-desc">A Natural Wonder & Big Five Sanctuary</p>
+              <span class="destination-card-link">Learn More &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Kilimanjaro -->
+          <a href="pages/kilimanjaro.html" class="destination-card reveal-fade delay-2">
+            <img src="assets/images/kilimanjaro-summit.jpg" alt="Mount Kilimanjaro Summit" loading="lazy">
+            <div class="destination-card-overlay">
+              <h3 class="destination-card-title">Kilimanjaro</h3>
+              <p class="destination-card-desc">Reach Your Summit on Africa's Roof</p>
+              <span class="destination-card-link">Learn More &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Zanzibar -->
+          <a href="pages/zanzibar.html" class="destination-card reveal-fade delay-3">
+            <img src="assets/images/zanzibar-beach.jpg" alt="Zanzibar Turquoise Beach" loading="lazy">
+            <div class="destination-card-overlay">
+              <h3 class="destination-card-title">Zanzibar</h3>
+              <p class="destination-card-desc">Turquoise Coast, Spices & Culture</p>
+              <span class="destination-card-link">Learn More &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Tarangire -->
+          <a href="pages/destinations.html#tarangire" class="destination-card reveal-fade delay-4">
+            <img src="assets/images/tarangire-elephants.jpg" alt="Tarangire Elephants" loading="lazy">
+            <div class="destination-card-overlay">
+              <h3 class="destination-card-title">Tarangire</h3>
+              <p class="destination-card-desc">Land of Giants & Ancient Baobabs</p>
+              <span class="destination-card-link">Learn More &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         8. HANDPICKED TOUR PACKAGES (LOCAL 4K ASSETS)
+         ============================================================ -->
+    <section class="packages-section" aria-label="Tour Packages">
+      <div class="container">
+        <div class="section-header-flex">
+          <div>
+            <span class="section-eyebrow">Featured Packages</span>
+            <h2 class="section-title">Handpicked Safari Packages</h2>
+            <p class="section-desc">Carefully crafted itineraries for the ultimate Tanzania experience with guaranteed departures and private options.</p>
+          </div>
+          <a href="pages/safari.html" class="btn btn-outline-dark btn-sm">View All Packages &rarr;</a>
+        </div>
+
+        <div class="packages-grid">
+          <!-- Kadi 1: 7-Day Northern Safari -->
+          <article class="tour-card reveal-fade">
+            <div class="tour-card-image">
+              <img src="assets/images/hero-kilimanjaro.jpg" alt="7-Day Northern Safari" loading="lazy">
+              <div class="tour-card-actions">
+                <button type="button" class="btn-card-action btn-action-save" data-tour-id="tour-7-northern" data-tour-title="7-Day Northern Safari" aria-label="Save this trip">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </button>
+                <button type="button" class="btn-card-action btn-action-compare" data-tour-id="tour-7-northern" data-tour-title="7-Day Northern Safari" data-tour-price="$1,850" data-tour-days="7 Days" aria-label="Compare this trip">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="tour-card-body">
+              <h3 class="tour-card-title">7-Day Northern Safari</h3>
+              <div class="tour-card-route">Tarangire • Ngorongoro • Serengeti</div>
+              <div class="tour-card-meta">
+                <span class="tour-card-meta-item">Duration: 7 Days</span>
+                <span class="tour-card-meta-item">Style: Private</span>
+              </div>
+              <div class="tour-card-footer">
+                <div>
+                  <span class="tour-card-price-label">Starting from</span>
+                  <div class="tour-card-price-val">$1,850 <span>/person</span></div>
+                </div>
+                <a href="tours/7-day-northern-safari.html" class="btn btn-dark btn-sm">View Details &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kadi 2: 6-Day Classic Safari -->
+          <article class="tour-card reveal-fade delay-1">
+            <div class="tour-card-image">
+              <img src="assets/images/serengeti-lions.jpg" alt="6-Day Classic Safari" loading="lazy">
+              <div class="tour-card-actions">
+                <button type="button" class="btn-card-action btn-action-save" data-tour-id="tour-6-classic" data-tour-title="6-Day Classic Safari" aria-label="Save this trip">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </button>
+                <button type="button" class="btn-card-action btn-action-compare" data-tour-id="tour-6-classic" data-tour-title="6-Day Classic Safari" data-tour-price="$1,650" data-tour-days="6 Days" aria-label="Compare this trip">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="tour-card-body">
+              <h3 class="tour-card-title">6-Day Classic Safari</h3>
+              <div class="tour-card-route">Tarangire • Ngorongoro • Lake Manyara</div>
+              <div class="tour-card-meta">
+                <span class="tour-card-meta-item">Duration: 6 Days</span>
+                <span class="tour-card-meta-item">Style: Private</span>
+              </div>
+              <div class="tour-card-footer">
+                <div>
+                  <span class="tour-card-price-label">Starting from</span>
+                  <div class="tour-card-price-val">$1,650 <span>/person</span></div>
+                </div>
+                <a href="pages/safari.html" class="btn btn-dark btn-sm">View Details &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kadi 3: 9-Day Safari & Zanzibar -->
+          <article class="tour-card reveal-fade delay-2">
+            <div class="tour-card-image">
+              <img src="assets/images/zanzibar-beach.jpg" alt="9-Day Safari and Zanzibar Beach" loading="lazy">
+              <div class="tour-card-actions">
+                <button type="button" class="btn-card-action btn-action-save" data-tour-id="tour-9-bush-beach" data-tour-title="9-Day Safari & Zanzibar" aria-label="Save this trip">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </button>
+                <button type="button" class="btn-card-action btn-action-compare" data-tour-id="tour-9-bush-beach" data-tour-title="9-Day Safari & Zanzibar" data-tour-price="$2,350" data-tour-days="9 Days" aria-label="Compare this trip">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="tour-card-body">
+              <h3 class="tour-card-title">9-Day Safari & Zanzibar</h3>
+              <div class="tour-card-route">Northern Safari + Island Beach Escape</div>
+              <div class="tour-card-meta">
+                <span class="tour-card-meta-item">Duration: 9 Days</span>
+                <span class="tour-card-meta-item">Style: Bush & Beach</span>
+              </div>
+              <div class="tour-card-footer">
+                <div>
+                  <span class="tour-card-price-label">Starting from</span>
+                  <div class="tour-card-price-val">$2,350 <span>/person</span></div>
+                </div>
+                <a href="pages/zanzibar.html" class="btn btn-dark btn-sm">View Details &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kadi 4: Kilimanjaro Machame Climb -->
+          <article class="tour-card reveal-fade delay-3">
+            <div class="tour-card-image">
+              <img src="assets/images/kilimanjaro-summit.jpg" alt="Kilimanjaro Climb Machame Route" loading="lazy">
+              <div class="tour-card-actions">
+                <button type="button" class="btn-card-action btn-action-save" data-tour-id="tour-kili-machame" data-tour-title="Kilimanjaro Machame Climb" aria-label="Save this trip">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </button>
+                <button type="button" class="btn-card-action btn-action-compare" data-tour-id="tour-kili-machame" data-tour-title="Kilimanjaro Machame Climb" data-tour-price="$1,950" data-tour-days="7 Days" aria-label="Compare this trip">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="tour-card-body">
+              <h3 class="tour-card-title">Kilimanjaro Climb</h3>
+              <div class="tour-card-route">Machame 'Whiskey' Route • High Success</div>
+              <div class="tour-card-meta">
+                <span class="tour-card-meta-item">Duration: 7 Days</span>
+                <span class="tour-card-meta-item">Style: Mountain Trek</span>
+              </div>
+              <div class="tour-card-footer">
+                <div>
+                  <span class="tour-card-price-label">Starting from</span>
+                  <div class="tour-card-price-val">$1,950 <span>/person</span></div>
+                </div>
+                <a href="pages/kilimanjaro.html" class="btn btn-dark btn-sm">View Details &rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         9. TRIP BUILDER (INTERACTIVE SIMULATION)
+         ============================================================ -->
+    <section class="builder-section" id="tripBuilderApp" aria-label="Custom Trip Builder">
+      <div class="container">
+        <div class="section-header-flex">
+          <div>
+            <span class="section-eyebrow">Interactive Trip Planner</span>
+            <h2 class="section-title">Build Your Tanzania Journey</h2>
+            <p class="section-desc">Tailor your custom safari by adding, removing, and testing destinations across Tanzania. We calculate estimated duration and transparent base pricing in real-time.</p>
+          </div>
+        </div>
+
+        <div class="builder-interface">
+          <div>
+            <h4 style="margin-bottom: var(--space-md); color: var(--color-primary-dark);">Your Route Stream:</h4>
+            <div class="builder-itinerary-stream" id="builderItineraryList"></div>
+
+            <div style="margin-top: var(--space-md);">
+              <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--color-text-muted); display: block; margin-bottom: 0.4rem;">Add Destinations:</span>
+              <div id="builderAvailableOptions" style="display: flex; flex-wrap: wrap; gap: 0.4rem;"></div>
+            </div>
+          </div>
+
+          <div class="builder-summary-panel">
+            <div>
+              <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--color-accent); letter-spacing: 0.05em;">Estimated Custom Trip</span>
+              <div style="margin: 0.5rem 0 1.25rem 0;">
+                <div style="font-size: 2.2rem; font-weight: 700; color: var(--color-primary-dark);" id="builderTotalPrice">$2,400</div>
+                <span style="font-size: 0.8rem; color: var(--color-text-muted);">Estimated per person (4WD Land Cruiser, Park fees & Lodging)</span>
+              </div>
+
+              <div style="padding: 1rem 0; border-top: 1px dashed var(--color-border); border-bottom: 1px dashed var(--color-border); margin-bottom: 1.25rem;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.4rem;">
+                  <span>Total Duration:</span>
+                  <strong id="builderTotalDays">8 Days</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+                  <span>Route:</span>
+                  <strong id="builderRouteSummary" style="font-size: 0.75rem; text-align: right; max-width: 60%;">Arusha → Tarangire → Ngorongoro → Serengeti</strong>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <a href="pages/contact.html" class="btn btn-primary" style="width: 100%;">Request This Custom Trip</a>
+              <button type="button" id="builderWhatsAppBtn" class="btn btn-outline-dark" style="width: 100%;">Share Route on WhatsApp</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         10. RESPONSIBLE TOURISM & CONSERVATION
+         ============================================================ -->
+    <section class="responsible-section" aria-label="Responsible Tourism">
+      <div class="container">
+        <div class="responsible-grid">
+          <div class="responsible-text-box reveal-fade">
+            <span class="section-eyebrow" style="color: var(--color-accent-light);">Sustainable Travel Pledge</span>
+            <h2>Protecting Nature, Empowering Communities</h2>
+            <p>
+              Tourism should never exploit the landscapes or people it visits. At LOMA Adventures, we operate with transparent ethics: zero plastic waste in national parks, fair living wages and nutritious hot meals for mountain porters, and direct contributions to rural primary education in Arusha.
+            </p>
+            <div class="responsible-pledge-list">
+              <div class="responsible-pledge-item">
+                <div class="responsible-pledge-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h4 style="color: #ffffff; font-size: 0.95rem; margin-bottom: 2px;">Porter Welfare & Ethical Standards</h4>
+                  <p style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.7); margin: 0;">Certified guidelines ensuring 20kg strict weight caps, warm mountain gear, and timely payment.</p>
+                </div>
+              </div>
+
+              <div class="responsible-pledge-item">
+                <div class="responsible-pledge-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h4 style="color: #ffffff; font-size: 0.95rem; margin-bottom: 2px;">Wildlife Conservation First</h4>
+                  <p style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.7); margin: 0;">Strict off-road driving avoidance in Serengeti, maintaining respectful distance from maternal dens and river crossings.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal-fade delay-1" style="border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-xl);">
+            <img src="assets/images/ngorongoro-crater.jpg" alt="Ngorongoro Conservation" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         11. TRAVEL STORIES / EDITORIAL JOURNAL
+         ============================================================ -->
+    <section class="journal-section" aria-label="Travel Journal">
+      <div class="container">
+        <div class="section-header-flex">
+          <div>
+            <span class="section-eyebrow">Editorial Journal</span>
+            <h2 class="section-title">Stories From The Savannah</h2>
+            <p class="section-desc">Practical guides, wildlife phenomena, cultural traditions, and seasonal reports written by our team on the ground.</p>
+          </div>
+          <a href="pages/travel-guide.html" class="btn btn-outline-dark btn-sm">All Stories & Guides &rarr;</a>
+        </div>
+
+        <div class="journal-grid">
+          <!-- Makala 1 -->
+          <article class="journal-card reveal-fade">
+            <div class="journal-card-image">
+              <img src="assets/images/serengeti-lions.jpg" alt="Great Migration Serengeti" loading="lazy">
+            </div>
+            <div class="journal-card-content">
+              <span class="journal-card-meta">Wildlife Guide • 6 min read</span>
+              <h3 class="journal-card-title">Tracking the Great Migration: Month-by-Month Guide</h3>
+              <p class="journal-card-desc">Where the 1.5 million wildebeest and zebra herds travel throughout the year, from Ndutu calving to the Mara River.</p>
+              <a href="pages/travel-guide.html" class="journal-card-link">Read Story &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Makala 2 -->
+          <article class="journal-card reveal-fade delay-1">
+            <div class="journal-card-image">
+              <img src="assets/images/kilimanjaro-summit.jpg" alt="Kilimanjaro Acclimatization" loading="lazy">
+            </div>
+            <div class="journal-card-content">
+              <span class="journal-card-meta">High Altitude • 8 min read</span>
+              <h3 class="journal-card-title">The Art of Acclimatization on Mount Kilimanjaro</h3>
+              <p class="journal-card-desc">Why route choice and "climb high, sleep low" profiles make the difference between turning back and standing at Uhuru Peak.</p>
+              <a href="pages/kilimanjaro.html" class="journal-card-link">Read Story &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Makala 3 -->
+          <article class="journal-card reveal-fade delay-2">
+            <div class="journal-card-image">
+              <img src="assets/images/zanzibar-beach.jpg" alt="Zanzibar Spice and Stone Town" loading="lazy">
+            </div>
+            <div class="journal-card-content">
+              <span class="journal-card-meta">Culture & Coast • 5 min read</span>
+              <h3 class="journal-card-title">Beyond the Beaches: The Secret Alleys of Stone Town</h3>
+              <p class="journal-card-desc">Intricate carved Arab-Swahili wooden doors, aromatic vanilla plantations, and the sunset dhow culture of Zanzibar.</p>
+              <a href="pages/zanzibar.html" class="journal-card-link">Read Story &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         12. INTERNATIONAL TRAVEL CENTER
+         ============================================================ -->
+    <section class="international-section" aria-label="International Traveler Information">
+      <div class="container">
+        <div class="section-header-flex">
+          <div>
+            <span class="section-eyebrow">Practical Travel Essentials</span>
+            <h2 class="section-title">International Traveler Center</h2>
+            <p class="section-desc">Key practical information for travelers visiting Tanzania from the USA, Europe, Canada, Australia and worldwide.</p>
+          </div>
+          <a href="pages/travel-guide.html" class="btn btn-outline-dark btn-sm">Full Travel Guide &rarr;</a>
+        </div>
+
+        <div class="info-cards-grid">
+          <article class="info-card">
+            <div class="info-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                <line x1="7" y1="8" x2="17" y2="8"></line>
+                <line x1="7" y1="12" x2="13" y2="12"></line>
+              </svg>
+            </div>
+            <h3 class="info-card-title">Visa & Entry Requirements</h3>
+            <p class="info-card-desc">Most visitors require a visa, easily obtainable via Tanzania's official e-Visa portal or upon arrival at JRO/DAR/ZNZ airports.</p>
+            <a href="pages/travel-guide.html#visa" class="info-card-link">View Visa Guidelines &rarr;</a>
+          </article>
+
+          <article class="info-card">
+            <div class="info-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 2L11 13"></path>
+                <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+              </svg>
+            </div>
+            <h3 class="info-card-title">Getting Here & Airports</h3>
+            <p class="info-card-desc">Fly into Kilimanjaro (JRO) for Northern Safaris and Kili, or Julius Nyerere (DAR) and Abeid Amani Karume (ZNZ) for Zanzibar.</p>
+            <a href="pages/travel-guide.html#flights" class="info-card-link">Airport Transfer Info &rarr;</a>
+          </article>
+
+          <article class="info-card">
+            <div class="info-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <h3 class="info-card-title">Health & Vaccinations</h3>
+            <p class="info-card-desc">Malaria prophylaxis is advised for safari zones. Yellow Fever certificate required if traveling through endemic transit zones.</p>
+            <a href="pages/travel-guide.html#health" class="info-card-link">Medical Checklist &rarr;</a>
+          </article>
+
+          <article class="info-card">
+            <div class="info-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                <circle cx="12" cy="12" r="2"></circle>
+                <path d="M6 12h.01M18 12h.01"></path>
+              </svg>
+            </div>
+            <h3 class="info-card-title">Money, Currency & Tipping</h3>
+            <p class="info-card-desc">US Dollars (printed 2009 or newer) and Tanzanian Shillings (TZS) are standard. Cards accepted at major safari lodges.</p>
+            <a href="pages/travel-guide.html#currency" class="info-card-link">Tipping Guidelines &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         13. SEASONAL GUIDE
+         ============================================================ -->
+    <section class="seasonal-section" aria-label="Seasonal Weather Matrix">
+      <div class="container">
+        <div class="section-header-flex">
+          <div>
+            <span class="section-eyebrow">When to Visit</span>
+            <h2 class="section-title">Tanzania Seasonal Guide</h2>
+            <p class="section-desc">Click any month to inspect wildlife movements, mountain climbing conditions, Zanzibar beach climate, and seasonal crowds.</p>
+          </div>
+        </div>
+
+        <div class="month-selector-bar">
+          <button type="button" class="month-btn" data-month="JAN">JAN</button>
+          <button type="button" class="month-btn" data-month="FEB">FEB</button>
+          <button type="button" class="month-btn" data-month="MAR">MAR</button>
+          <button type="button" class="month-btn" data-month="APR">APR</button>
+          <button type="button" class="month-btn" data-month="MAY">MAY</button>
+          <button type="button" class="month-btn" data-month="JUN">JUN</button>
+          <button type="button" class="month-btn active" data-month="JUL">JUL</button>
+          <button type="button" class="month-btn" data-month="AUG">AUG</button>
+          <button type="button" class="month-btn" data-month="SEP">SEP</button>
+          <button type="button" class="month-btn" data-month="OCT">OCT</button>
+          <button type="button" class="month-btn" data-month="NOV">NOV</button>
+          <button type="button" class="month-btn" data-month="DEC">DEC</button>
+        </div>
+
+        <div class="seasonal-dashboard">
+          <div class="seasonal-metric-box">
+            <span class="metric-label">Selected Season</span>
+            <div class="metric-value" id="seasonMonthName">July in Tanzania</div>
+          </div>
+          <div class="seasonal-metric-box">
+            <span class="metric-label">Wildlife & Safari</span>
+            <div style="font-size: 0.85rem; color: var(--color-primary-dark);" id="seasonSafariVal">Peak Safari: Grumeti River crossings in Western Serengeti.</div>
+          </div>
+          <div class="seasonal-metric-box">
+            <span class="metric-label">Kilimanjaro Summit</span>
+            <div style="font-size: 0.85rem; color: var(--color-primary-dark);" id="seasonKiliVal">Superb visibility; colder nighttime temperatures at high altitude.</div>
+          </div>
+          <div class="seasonal-metric-box">
+            <span class="metric-label">Zanzibar Coast</span>
+            <div style="font-size: 0.85rem; color: var(--color-primary-dark);" id="seasonZanzibarVal">Ideal beach weather with gentle trade winds.</div>
+          </div>
+          <div class="seasonal-metric-box">
+            <span class="metric-label">Crowds & Rainfall</span>
+            <div style="font-size: 0.85rem; color: var(--color-primary-dark);">
+              <span id="seasonCrowdsVal">High</span> • <span id="seasonRainVal">Dry</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         14. PACKING ASSISTANT
+         ============================================================ -->
+    <section class="packing-section" aria-label="Packing Assistant">
+      <div class="container">
+        <div class="packing-card">
+          <div>
+            <span class="section-eyebrow">Packing Assistant</span>
+            <h2 class="section-title">What Should I Pack?</h2>
+            <p class="section-desc">Generate an authentic equipment and clothing checklist adapted specifically for your Tanzania travel style.</p>
+
+            <form id="packingAssistantForm">
+              <div class="form-group">
+                <label class="form-label" for="packingTripType">Trip Style</label>
+                <select id="packingTripType" class="form-control">
+                  <option value="safari" selected>Wildlife Safari (4WD Game Drives)</option>
+                  <option value="kilimanjaro">Mount Kilimanjaro Trekking</option>
+                  <option value="zanzibar">Zanzibar Island & Beach Retreat</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="packingDuration">Trip Duration</label>
+                <select id="packingDuration" class="form-control">
+                  <option value="5">Up to 5 Days</option>
+                  <option value="7" selected>6 - 8 Days</option>
+                  <option value="12">9 - 14 Days</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Build My Packing List</button>
+            </form>
+          </div>
+
+          <div class="packing-results" id="packingAssistantResults">
+            <div style="text-align: center; padding: 2rem 0; color: var(--color-text-muted);">
+              Select your trip style and click "Build My Packing List" to view recommended clothing, medical gear, and photography equipment.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         15. GUEST REVIEWS (REALISTIC PLACEHOLDERS)
+         ============================================================ -->
+    <section class="reviews-section" aria-label="Guest Reviews">
+      <div class="container">
+        <div class="section-header-flex">
+          <div>
+            <span class="section-eyebrow">Traveler Experiences</span>
+            <h2 class="section-title">What Our Guests Say</h2>
+            <p class="section-desc">Genuine experiences shared by travelers who explored Tanzania with our professional guiding team.</p>
+          </div>
+        </div>
+
+        <div class="review-featured-box reveal-fade">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <blockquote class="review-quote">
+              "An unforgettable experience! The team at LOMA Adventures was professional from day one. Our guide Joseph was incredible—his knowledge of the Serengeti and eye for spotting wildlife made our honeymoon truly magical."
+            </blockquote>
+            <div class="review-author-meta">
+              <img src="assets/images/guest-sarah.jpg" alt="Sarah Thompson" class="review-author-img">
+              <div>
+                <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--color-primary-dark);">Sarah Thompson</h4>
+                <p style="font-size: 0.8rem; margin: 0; color: var(--color-text-muted);">United States • 7-Day Northern Safari • July 2025</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-video-thumb">
+            <img src="assets/images/tarangire-elephants.jpg" alt="Tanzania Safari Guests">
+            <button type="button" class="play-badge-btn" aria-label="Play traveler story video" onclick="alert('Traveler Story Video preview: Real guests on Serengeti game drive with LOMA Adventures.')">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         16. FINAL CALL TO ACTION (LOCAL 4K ASSET)
+         ============================================================ -->
+    <section class="final-cta-section" aria-label="Final Call to Action">
+      <div class="container">
+        <div class="final-cta-content reveal-fade">
+          <h2 class="section-title">Ready to Explore Tanzania?</h2>
+          <p>Your journey begins with a single step. Speak with our local travel specialists to design your custom African journey today.</p>
+          <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+            <a href="pages/contact.html" class="btn btn-primary btn-lg">Plan Your Journey</a>
+            <a href="pages/contact.html" class="btn btn-secondary btn-lg">Request a Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       17. FOOTER (WITH WHITE BACKGROUND LOGO)
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand">
+          <!-- Nembo Rasmi yenye Usuli Mweupe (White Background Logo) kama ilivyoelekezwa -->
+          <div class="footer-white-card-logo">
+            <img src="assets/images/logo-white-bg.jpg" alt="LOMA Adventures - Explore More. Live the Journey.">
+          </div>
+          <p class="footer-tagline">"Explore. Learn. Experience. Create Memories."</p>
+          <p style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.65); line-height: 1.6;">
+            Founded in 2019. Dedicated to creating meaningful, educational, and authentic journeys across Tanzania.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Explore</h4>
+          <ul class="footer-links-list">
+            <li><a href="pages/safari.html">Northern Safari</a></li>
+            <li><a href="pages/kilimanjaro.html">Mount Kilimanjaro</a></li>
+            <li><a href="pages/zanzibar.html">Zanzibar Island</a></li>
+            <li><a href="pages/experiences.html">Curated Experiences</a></li>
+            <li><a href="pages/destinations.html">Tanzania Destinations</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links-list">
+            <li><a href="pages/about.html">About Loma</a></li>
+            <li><a href="pages/about.html#story">Our Story</a></li>
+            <li><a href="#authentic-experiences">Authentic Gallery</a></li>
+            <li><a href="pages/about.html#responsible">Responsible Tourism</a></li>
+            <li><a href="pages/contact.html">Careers & Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Support</h4>
+          <ul class="footer-links-list">
+            <li><a href="pages/travel-guide.html">Travel Guide & FAQs</a></li>
+            <li><a href="pages/travel-guide.html#visa">Visa & Entry</a></li>
+            <li><a href="pages/travel-guide.html#health">Travel Insurance</a></li>
+            <li><a href="pages/contact.html">Terms & Conditions</a></li>
+            <li><a href="pages/contact.html">Request a Quote</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter-col">
+          <h4 class="footer-col-title">Stay Connected</h4>
+          <p style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.65); margin-bottom: 0.75rem;">
+            Get Tanzania travel inspiration, wildlife updates, and exclusive seasonal offers.
+          </p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" class="newsletter-input" placeholder="Enter your email address" required aria-label="Email address for newsletter">
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+          </form>
+
+          <div style="margin-top: 1.25rem; font-size: 0.75rem; color: rgba(255, 255, 255, 0.65);">
+            <div>Location: Arusha, Tanzania [OFFICE ADDRESS]</div>
+            <div>Email: [EMAIL] • Phone: [PHONE]</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; <span id="currentYear">2026</span> LOMA Adventures. All rights reserved. [Licensed Tour Operator in Tanzania]</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Responsible Tourism Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Droo ya Kulinganisha -->
+  <div class="compare-drawer" id="compareDrawer" role="region" aria-label="Tour Comparison Bar">
+    <div class="compare-drawer-inner">
+      <div style="display: flex; align-items: center; gap: var(--space-md);">
+        <span style="font-weight: 700; color: var(--color-primary-dark); font-size: 0.9rem;">
+          Comparing (<span id="compareCount">0</span>/3):
+        </span>
+        <div id="compareItemsList" class="compare-items-preview"></div>
+      </div>
+      <div style="display: flex; gap: var(--space-sm);">
+        <button type="button" id="clearCompare" class="btn btn-outline-dark btn-sm">Clear</button>
+        <a href="pages/contact.html" class="btn btn-primary btn-sm">Inquire Selected</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dirisha la Utafutaji -->
+  <div class="search-modal" id="searchModal" role="dialog" aria-modal="true" aria-label="Site Search">
+    <div class="search-modal-container">
+      <div class="search-header">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-accent);">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="globalSearchInput" class="search-input" placeholder="Search tours, Serengeti, Kilimanjaro, packing..." aria-label="Search keywords">
+        <button type="button" class="search-close-btn" id="searchClose" aria-label="Close search">&times;</button>
+      </div>
+      <div class="search-results-area" id="searchResultsArea"></div>
+    </div>
+  </div>
+
+  <!-- Kitufe cha 3D WhatsApp chenye kidokezo -->
+  <aside class="whatsapp-float-wrapper" aria-label="WhatsApp Contact Button">
+    <div class="whatsapp-micro-tooltip" id="whatsappTooltip" style="display: none;">
+      <div class="whatsapp-tooltip-header">
+        <span>Planning a trip to Tanzania?</span>
+        <button type="button" class="whatsapp-tooltip-close" id="closeWhatsappTooltip" aria-label="Close message">&times;</button>
+      </div>
+      <div class="whatsapp-tooltip-body">
+        Chat with our local team on WhatsApp for custom itineraries & instant advice.
+      </div>
+      <a href="#" class="whatsapp-tooltip-btn" id="whatsappTooltipChat">Chat with us &rarr;</a>
+    </div>
+
+    <button type="button" class="whatsapp-3d-btn" id="whatsappMainBtn" aria-label="Chat with LOMA Adventures on WhatsApp">
+      <svg viewBox="0 0 32 32">
+        <path d="M16 2a13.9 13.9 0 0 0-12 21L2 30l7.2-1.9A13.9 13.9 0 1 0 16 2zm0 25.5a11.5 11.5 0 0 1-5.9-1.6l-.4-.3-4.3 1.1 1.2-4.2-.3-.5a11.6 11.6 0 1 1 9.4 5.5zm6.4-8.6c-.3-.2-2-.9-2.3-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1.1-1 1.3-.2.2-.4.2-.7.1a8.9 8.9 0 0 1-4.2-3.6c-.3-.5.3-.5.9-1.7.1-.2 0-.4 0-.5s-.7-1.7-.9-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.9 1.2 3.4 1.4 3.6 2.4 3.7 5.8 5.1c.8.4 1.4.6 1.9.7.8.3 1.6.2 2.2.1.7-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.5z"/>
+      </svg>
+    </button>
+  </aside>
+
+  <!-- JavaScript Modules -->
+  <script src="js/main.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/planner.js"></script>
+  <script src="js/trip-builder.js"></script>
+  <script src="js/seasonal.js"></script>
+  <script src="js/packing.js"></script>
+  <script src="js/save-compare.js"></script>
+  <script src="js/forms.js"></script>
+  <script src="js/whatsapp.js"></script>
+</body>
+</html>

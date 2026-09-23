@@ -1,0 +1,255 @@
+/*
+ * ============================================================
+ * LOMA ADVENTURES — RESPONSIVE STYLES (UTAYARISHAJI WA VIFAA)
+ * ============================================================
+ * Muundo maalum unaohakikisha kurasa zinaonekana vizuri sana
+ * kwenye vifaa vyote kuanzia simu ndogo sana (320px) hadi
+ * skrini kubwa za kompyuta (2560px+):
+ * - Hakuna maandishi yanayopishana au kufunikana
+ * - Hakuna kadi zinazovunjika vibaya
+ * - Hakuna mistari au maudhui yanayotoka nje (No horizontal overflow)
+ * - Vitufe vina ukubwa sahihi wa kuguswa kwa kidole (Min 44px)
+ */
+
+/* Vifaa Vikubwa vya Kompyuta (2560px+) */
+@media (min-width: 2560px) {
+  :root {
+    --container-max: 1800px;
+  }
+}
+
+/* Vifaa vya Kompyuta vya Kawaida (1280px - 1440px) */
+@media (max-width: 1440px) {
+  .destinations-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Laptops na Skrini za Wastani (1024px - 1200px) */
+@media (max-width: 1200px) {
+  .packages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .destinations-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer-top-grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+  .footer-newsletter-col {
+    grid-column: span 4;
+    margin-top: var(--space-lg);
+  }
+}
+
+/* Tablets (768px - 1023px) */
+@media (max-width: 1023px) {
+  /* Ficha Menyu ya Kawaida ya Desktop */
+  .desktop-nav {
+    display: none;
+  }
+
+  /* Washa kitufe cha Hamburger */
+  .mobile-nav-toggle {
+    display: flex;
+  }
+
+  /* Kipanga Safari (Planner) kiwe gridi ya safu 2 */
+  .planner-wrapper {
+    margin-top: -30px;
+  }
+
+  .planner-form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .planner-form-grid .btn-primary {
+    grid-column: span 2;
+  }
+
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .experiences-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .builder-interface {
+    grid-template-columns: 1fr;
+  }
+
+  .info-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .seasonal-dashboard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .packing-card {
+    grid-template-columns: 1fr;
+  }
+
+  .review-featured-box {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .footer-newsletter-col {
+    grid-column: span 2;
+  }
+
+  /* Uwekaji wa Kitufe cha 3D cha WhatsApp kwenye Tablet */
+  .whatsapp-float-wrapper {
+    right: 20px;
+    bottom: 24px;
+  }
+}
+
+/* Simu Kubwa na za Wastani (480px - 767px) */
+@media (max-width: 767px) {
+  .site-header {
+    height: var(--header-height-mobile);
+  }
+
+  .brand-logo img {
+    height: 50px;
+  }
+
+  .hero-section {
+    min-height: 85vh;
+    padding-top: calc(var(--header-height-mobile) + var(--space-xl));
+    padding-bottom: var(--space-3xl);
+  }
+
+  .planner-wrapper {
+    margin-top: -20px;
+    padding: 0 var(--space-sm);
+  }
+
+  .planner-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .planner-form-grid .btn-primary {
+    grid-column: span 1;
+    width: 100%;
+  }
+
+  .destinations-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+  }
+
+  .experiences-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .packages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .month-selector-bar {
+    grid-template-columns: repeat(6, 1fr);
+    row-gap: 0.35rem;
+  }
+
+  .seasonal-dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .packing-item-list {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-newsletter-col {
+    grid-column: span 1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: var(--space-sm);
+    text-align: center;
+  }
+
+  /* Uwekaji wa Kitufe cha 3D cha WhatsApp kwenye Simu
+     Kama ilivyoelekezwa: bottom 80px ili kuzuia kugongana na viunzi vya chini vya simu */
+  .whatsapp-float-wrapper {
+    right: 16px;
+    bottom: 80px;
+  }
+
+  .whatsapp-3d-btn {
+    width: 60px;
+    height: 60px;
+  }
+
+  .whatsapp-3d-btn svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Simu Ndogo Sana (320px - 479px) */
+@media (max-width: 479px) {
+  .destinations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .month-selector-bar {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Miongozo ya vifaa kwa ajili ya sehemu mpya: Why Loma, Wooden Frames, na Responsible */
+@media (max-width: 1200px) {
+  .why-loma-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1023px) {
+  .responsible-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+  .journal-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .why-loma-grid {
+    grid-template-columns: 1fr;
+  }
+  .journal-grid {
+    grid-template-columns: 1fr;
+  }
+}

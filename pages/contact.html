@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Plan Your Trip | LOMA Adventures Tanzania</title>
+  <meta name="description" content="Contact LOMA Adventures. Get a custom itinerary quote for your Tanzania safari, Kilimanjaro climb, or Zanzibar retreat from our Arusha team.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/sections.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header scrolled">
+    <div class="container header-container">
+      <a href="../index.html" class="brand-logo">
+        <img src="../assets/images/logo.png" alt="LOMA Adventures" width="180" height="62">
+      </a>
+      <nav class="desktop-nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="safari.html" class="nav-link">Safari</a>
+        <a href="kilimanjaro.html" class="nav-link">Kilimanjaro</a>
+        <a href="zanzibar.html" class="nav-link">Zanzibar</a>
+        <a href="destinations.html" class="nav-link">Destinations</a>
+        <a href="travel-guide.html" class="nav-link">Travel Guide</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" onclick="openWhatsAppChat()" class="btn btn-primary btn-sm">WhatsApp Us</button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 100px;">
+    <!-- Hero Banner (Local 4K Asset) -->
+    <section style="background: linear-gradient(180deg, rgba(13,40,28,0.7) 0%, rgba(13,40,28,0.85) 100%), url('../assets/images/tarangire-elephants.jpg'); background-size: cover; background-position: center; color: #fff; padding: 4.5rem 0; text-align: center; text-align: left;">
+      <div class="container subpage-hero-container">
+        <div class="subpage-hero-content">
+        <span class="badge badge-gold" style="margin-bottom: 1rem;">Let's Plan Together</span>
+        <h1 style="color: #ffffff; margin-bottom: 1rem;">Design Your Custom Journey</h1>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.15rem;">
+          Tell us your vision, preferred travel dates, and group size. We'll craft a personalized itinerary with zero obligation.
+        </p>
+      </div>
+    </section>
+
+    <!-- Fomu na Maelezo ya Mawasiliano -->
+    <section style="padding: var(--space-4xl) 0; background: var(--color-bg);">
+      <div class="container" style="display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-3xl);">
+
+        <!-- Fomu Kuu -->
+        <div style="background: #ffffff; border-radius: var(--radius-xl); padding: var(--space-2xl); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
+          <span class="section-eyebrow">Trip Inquiry Form</span>
+          <h2 style="color: var(--color-primary-dark); margin-bottom: 1.5rem;">Request a Tailor-Made Quotation</h2>
+
+          <div id="inquiryFormFeedback" style="display: none; padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1.5rem; font-size: 0.9rem;"></div>
+
+          <form id="lomaTripInquiryForm">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label" for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" class="form-control" placeholder="e.g. Eleanor Vance" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address *</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com" required>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label" for="country">Country of Residence *</label>
+                <input type="text" id="country" name="country" class="form-control" placeholder="e.g. United States, Germany" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="whatsappNumber">WhatsApp (Optional)</label>
+                <input type="tel" id="whatsappNumber" name="whatsappNumber" class="form-control" placeholder="+1 (555) 000-0000">
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label" for="tripType">Trip Interest</label>
+                <select id="tripType" name="tripType" class="form-control">
+                  <option value="safari">Northern Wildlife Safari</option>
+                  <option value="kilimanjaro">Mount Kilimanjaro Climb</option>
+                  <option value="zanzibar">Zanzibar Island Retreat</option>
+                  <option value="combined" selected>Combined Bush & Beach (Safari + Zanzibar)</option>
+                  <option value="custom">Fully Custom Adventure</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="travelersCount">Number of Travelers</label>
+                <select id="travelersCount" name="travelersCount" class="form-control">
+                  <option value="1">1 Solo Traveler</option>
+                  <option value="2" selected>2 Adults (Couple / Friends)</option>
+                  <option value="family">Family with Children</option>
+                  <option value="group">Small Group (4-8+)</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label" for="travelDate">Estimated Travel Month / Year</label>
+                <input type="text" id="travelDate" name="travelDate" class="form-control" placeholder="e.g. August 2026">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="budget">Preferred Accommodation Style</label>
+                <select id="budget" name="budget" class="form-control">
+                  <option value="comfort">Mid-Range / Comfort Lodges</option>
+                  <option value="luxury" selected>Classic Luxury Tented Safari</option>
+                  <option value="ultra">Ultra-Luxury / Exclusive Wilderness</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Tell us about your dream trip</label>
+              <textarea id="message" name="message" class="form-control" placeholder="Any specific wildlife you wish to see, milestone celebrations, or special preferences?"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              Request My Tailor-Made Trip &rarr;
+            </button>
+          </form>
+        </div>
+
+        <!-- Maelezo ya Ofisi na Msaada -->
+        <div style="display: flex; flex-direction: column; gap: var(--space-xl);">
+          <div style="background: var(--color-surface); border-radius: var(--radius-xl); padding: var(--space-xl); border: 1px solid var(--color-border);">
+            <h3 style="color: var(--color-primary-dark); margin-bottom: 1rem;">Direct Contact</h3>
+            
+            <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.9rem; color: var(--color-text-main);">
+              <div>
+                <strong>Base Operations Office:</strong><br>
+                Arusha, Tanzania [OFFICE ADDRESS]
+              </div>
+
+              <div>
+                <strong>Email Inquiries:</strong><br>
+                [EMAIL]
+              </div>
+
+              <div>
+                <strong>Phone / WhatsApp:</strong><br>
+                [PHONE]
+              </div>
+
+              <div>
+                <strong>Business Hours:</strong><br>
+                Monday – Saturday: 8:00 AM – 7:00 PM (East Africa Time)<br>
+                24/7 Operations Support for Active Safari Travelers
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dashed var(--color-border);">
+              <button type="button" onclick="openWhatsAppChat('Direct Inquiry from Contact Page')" class="btn btn-dark" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                Chat Directly on WhatsApp
+              </button>
+            </div>
+          </div>
+
+          <!-- Kadi ya Uaminifu -->
+          <div style="background: var(--color-primary-soft); border-radius: var(--radius-lg); padding: var(--space-lg); border: 1px solid rgba(21,62,45,0.15);">
+            <h4 style="color: var(--color-primary); font-size: 0.95rem; margin-bottom: 0.5rem;">Prompt Response Guarantee</h4>
+            <p style="font-size: 0.8rem; color: var(--color-text-muted); margin: 0; line-height: 1.6;">
+              Every traveler inquiry is assigned to a dedicated native safari planner who lives and works in Tanzania. We provide transparent pricing breakdowns, advice on lodge availability, and detailed day-by-day itineraries within 12 hours.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>&copy; 2026 LOMA Adventures. "Explore More. Live the Journey."</div>
+      <div>[Licensed Tour Operator in Tanzania]</div>
+    </div>
+  </footer>
+
+  <script src="../js/forms.js"></script>
+  <script src="../js/whatsapp.js"></script>
+</body>
+</html>

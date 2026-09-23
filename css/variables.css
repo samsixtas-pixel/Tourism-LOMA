@@ -1,0 +1,104 @@
+/*
+ * ============================================================
+ * LOMA ADVENTURES — DESIGN SYSTEM VARIABLES (VIPINDI VYA CSS)
+ * ============================================================
+ * Mfumo huu wa rangi na vipimo umejengwa kulingana na nembo rasmi
+ * ya LOMA Adventures pamoja na miongozo ya mandhari ya Tanzania:
+ * - Kijani kibichi cha misitu ya asili (Deep Forest Green)
+ * - Dhahabu ya mbugani na machweo ya jua (Safari Gold / Ochre)
+ * - Rangi tulivu ya udongo na mchanga (Warm Cream / Ivory)
+ *
+ * Vipengele vyote vimeandikwa kwa muundo wa CSS Custom Properties
+ * ili kurahisisha mabadiliko ya baadaye au muunganisho wa mfumo mkuu (Backend/CMS).
+ */
+
+:root {
+  /* --- Rangi Kuu za Biashara (Brand Colors) --- */
+  --color-primary: #153e2d;            /* Kijani kibichi chenye asili ya misitu ya Kiafrika */
+  --color-primary-dark: #0d281c;       /* Kijani cheusi cha kina kwa ajili ya usiku na footer */
+  --color-primary-light: #245740;      /* Kijani angavu kwa hali ya hover */
+  --color-primary-soft: rgba(21, 62, 45, 0.08); /* Kivuli laini cha kijani */
+
+  /* --- Rangi ya Mkazo na Mvuto (Safari Gold / Ochre) --- */
+  --color-accent: #c59b27;             /* Dhahabu ya machweo ya Serengeti na nembo */
+  --color-accent-hover: #b0871d;       /* Dhahabu iliyoiva kidogo wakati wa kugusa */
+  --color-accent-light: #e8c872;       /* Dhahabu nyepesi kwa vivuli na viunzi vidogo */
+  --color-accent-soft: rgba(197, 155, 39, 0.14); /* Usuli laini wa dhahabu */
+
+  /* --- Usuli na Muonekano wa Kurasa (Background & Surfaces) --- */
+  --color-bg: #fbf9f5;                 /* Warm Cream / Ivory - inalinda macho na kuleta asili */
+  --color-bg-alt: #f3efe6;             /* Cream ya udongo wa mbugani kwa sehemu mbadala */
+  --color-surface: #ffffff;            /* Kadi na sehemu nyeupe safi */
+  --color-surface-dark: #0f2319;       /* Kadi nyeusi za kijani kibichi (kama sehemu ya Experiences) */
+
+  /* --- Maandishi (Typography Colors) --- */
+  --color-text-main: #1b2620;          /* Kijivu cheusi chenye chembe ya kijani kwa usomaji mzuri */
+  --color-text-muted: #5e6f66;         /* Maandishi ya maelezo ya ziada na tarehe */
+  --color-text-light: #a4b3aa;         /* Maandishi mepesi juu ya sehemu zenye giza */
+  --color-text-inverse: #ffffff;       /* Maandishi meupe safi */
+
+  /* --- Hali za Mfumo (Feedback States) --- */
+  --color-success: #2e7d32;
+  --color-warning: #e65100;
+  --color-error: #c62828;
+  --color-border: #e6e0d5;             /* Mistari laini ya kugawa sehemu */
+  --color-border-dark: rgba(255, 255, 255, 0.12);
+
+  /* --- Fonti na Maandishi (Typography System) --- */
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* --- Vipimo vya Ukubwa wa Maandishi (Fluid Typography) --- */
+  --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
+  --text-sm: clamp(0.875rem, 0.84rem + 0.18vw, 0.9375rem);
+  --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --text-lg: clamp(1.125rem, 1.06rem + 0.3vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.35rem + 0.75vw, 1.875rem);
+  --text-3xl: clamp(1.875rem, 1.65rem + 1vw, 2.375rem);
+  --text-4xl: clamp(2.25rem, 1.95rem + 1.5vw, 3.25rem);
+  --text-hero: clamp(2.5rem, 2.1rem + 2.5vw, 4.25rem);
+
+  /* --- Nafasi na Uachano (Spacing Tokens) --- */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4.5rem;
+  --space-4xl: 6rem;
+
+  /* --- Upana wa Ukurasa (Layout Widths) --- */
+  --container-max: 1320px;
+  --container-narrow: 1040px;
+  --header-height: 84px;
+  --header-height-mobile: 72px;
+
+  /* --- Miinuko na Vivuli (Shadows & Elevation) --- */
+  --shadow-sm: 0 2px 6px rgba(13, 40, 28, 0.05);
+  --shadow-md: 0 6px 18px rgba(13, 40, 28, 0.08);
+  --shadow-lg: 0 14px 34px rgba(13, 40, 28, 0.12);
+  --shadow-xl: 0 24px 50px rgba(13, 40, 28, 0.16);
+  --shadow-gold: 0 8px 24px rgba(197, 155, 39, 0.35);
+
+  /* --- Vipenyo vya Pembe (Border Radius) --- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* --- Muda wa Mabadiliko (Transitions) --- */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* --- Madaraja ya Tabaka (Z-Index Hierarchy) --- */
+  --z-header: 1000;
+  --z-drawer: 1100;
+  --z-modal: 1200;
+  --z-floating: 1050;
+  --z-tooltip: 1300;
+}

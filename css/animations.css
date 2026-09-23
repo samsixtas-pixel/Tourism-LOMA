@@ -1,0 +1,49 @@
+/*
+ * ============================================================
+ * LOMA ADVENTURES — ANIMATIONS & MICRO-INTERACTIONS
+ * ============================================================
+ * Michoro na mienendo iliyo tulivu na maridadi (Calm & Elegant):
+ * - Hakuna fujo wala madoido yasiyo na maana
+ * - Kuonekana taratibu wakati wa kuteremsha ukurasa (Scroll Reveal)
+ * - Mng'ao laini kwenye kadi na vitufe
+ * - Inasaidia watumiaji wenye chaguo la kupunguza mwendo (prefers-reduced-motion)
+ */
+
+/* Kuonekana taratibu kwa vipengele (Fade & Slide In) */
+.reveal-fade {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Kuchelewa kidogo kwa vipengele vinavyofuatana (Stagger Delays) */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* Mzunguko mdogo wa spinner wakati wa kutuma fomu */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 0.8s linear infinite;
+}
+
+/* Heshimu chaguo la mtumiaji la kutotaka mizunguko mikali */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

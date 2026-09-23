@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7-Day Northern Safari | LOMA Adventures Tanzania</title>
+  <meta name="description" content="Experience Tarangire, Ngorongoro Crater and Serengeti on this premier 7-day private Tanzania safari with expert local guides.">
+
+  <!-- Fonti -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/sections.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+
+  <style>
+    .tour-hero {
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: var(--space-3xl);
+      background: linear-gradient(180deg, rgba(13, 40, 28, 0.4) 0%, rgba(13, 40, 28, 0.85) 100%),
+                  url('../assets/images/hero-kilimanjaro.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+      padding-top: 140px;
+    }
+    .tour-meta-strip {
+      background: #ffffff;
+      border-bottom: 1px solid var(--color-border);
+      padding: var(--space-md) 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .tour-meta-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .itinerary-day-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      padding: var(--space-lg);
+      margin-bottom: var(--space-md);
+      transition: border-color var(--transition-fast);
+    }
+    .itinerary-day-card:hover {
+      border-color: var(--color-accent);
+    }
+    .itinerary-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      background: var(--color-primary-soft);
+      color: var(--color-primary);
+      font-weight: 700;
+      font-size: 0.75rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.4rem;
+    }
+    .pricing-card-box {
+      background: var(--color-surface);
+      border-radius: var(--radius-xl);
+      border: 2px solid var(--color-accent);
+      padding: var(--space-xl);
+      box-shadow: var(--shadow-lg);
+      position: sticky;
+      top: 100px;
+    }
+    .inclusion-list {
+      list-style: none;
+      padding: 0;
+    }
+    .inclusion-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body data-tour-title="7-Day Northern Safari">
+
+  <!-- Header -->
+  <header class="site-header scrolled" role="banner">
+    <div class="container header-container">
+      <a href="../index.html" class="brand-logo" aria-label="LOMA Adventures Homepage">
+        <img src="../assets/images/logo.png" alt="LOMA Adventures" width="180" height="62">
+      </a>
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../pages/safari.html" class="nav-link active">Safari</a>
+        <a href="../pages/kilimanjaro.html" class="nav-link">Kilimanjaro</a>
+        <a href="../pages/zanzibar.html" class="nav-link">Zanzibar</a>
+        <a href="../pages/destinations.html" class="nav-link">Destinations</a>
+        <a href="../pages/travel-guide.html" class="nav-link">Travel Guide</a>
+        <a href="../pages/about.html" class="nav-link">About Us</a>
+        <a href="../pages/contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" onclick="openWhatsAppChat('7-Day Northern Safari')" class="btn btn-primary btn-sm">
+          Inquire This Trip
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero ya Safari -->
+  <main id="mainContent">
+    <section class="tour-hero">
+      <div class="container">
+        <div class="tour-hero-content-right">
+          <span class="badge badge-gold" style="margin-bottom: 0.75rem;">Signature Northern Circuit</span>
+          <h1 style="color: #ffffff; margin-bottom: 0.75rem;">7-Day Northern Safari</h1>
+          <p style="color: rgba(255,255,255,0.9); font-size: 1.15rem;">
+            Tarangire National Park • Ngorongoro Crater • Central & Northern Serengeti
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upau wa Vigezo vya Safari (Meta Strip) -->
+    <div class="tour-meta-strip">
+      <div class="container tour-meta-grid">
+        <div>
+          <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-text-muted);">Duration</span>
+          <div style="font-weight: 700; color: var(--color-primary-dark);">7 Days / 6 Nights</div>
+        </div>
+        <div>
+          <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-text-muted);">Travel Style</span>
+          <div style="font-weight: 700; color: var(--color-primary-dark);">Private 4WD Land Cruiser</div>
+        </div>
+        <div>
+          <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-text-muted);">Starting Point</span>
+          <div style="font-weight: 700; color: var(--color-primary-dark);">Arusha / Kilimanjaro (JRO)</div>
+        </div>
+        <div>
+          <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-text-muted);">Starting Price</span>
+          <div style="font-weight: 700; color: var(--color-primary-dark); font-size: 1.25rem;">$1,850 <span>/person</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Maudhui ya Ratiba na Bei -->
+    <section style="padding: var(--space-3xl) 0; background: var(--color-bg);">
+      <div class="container" style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-2xl);">
+        
+        <div>
+          <h2 style="margin-bottom: var(--space-md); color: var(--color-primary-dark);">Tour Overview</h2>
+          <p style="margin-bottom: var(--space-xl); line-height: 1.8;">
+            This curated 7-day safari covers the absolute highlights of Tanzania's world-famous Northern Circuit. Witness herds of hundreds of elephants in Tarangire, descend 600 meters into the Ngorongoro Crater caldera teeming with black rhinos and lions, and spend three unforgettable days tracking the Great Migration across the endless plains of the Serengeti.
+          </p>
+
+          <h3 style="margin-bottom: var(--space-lg); color: var(--color-primary-dark);">Detailed Day-by-Day Itinerary</h3>
+
+          <!-- Siku 1 -->
+          <div class="itinerary-day-card">
+            <span class="itinerary-badge">Day 1</span>
+            <h4 style="color: var(--color-primary-dark); margin-bottom: 0.4rem;">Arrival in Arusha (The Safari Capital)</h4>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6;">
+              Arrive at Kilimanjaro International Airport (JRO). Meet your private LOMA Adventures safari guide and transfer to your boutique lodge in Arusha. Evening briefing and dinner under the stars.
+            </p>
+          </div>
+
+          <!-- Siku 2 -->
+          <div class="itinerary-day-card">
+            <span class="itinerary-badge">Day 2</span>
+            <h4 style="color: var(--color-primary-dark); margin-bottom: 0.4rem;">Tarangire National Park (Elephants & Baobabs)</h4>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6;">
+              Drive through the scenic Maasai steppe into Tarangire National Park. Known for its massive elephant population and iconic ancient baobab trees. Afternoon game drive along the Tarangire River.
+            </p>
+          </div>
+
+          <!-- Siku 3 -->
+          <div class="itinerary-day-card">
+            <span class="itinerary-badge">Day 3</span>
+            <h4 style="color: var(--color-primary-dark); margin-bottom: 0.4rem;">Ngorongoro Crater (The Eighth Wonder)</h4>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6;">
+              Early morning descent into the volcanic floor of Ngorongoro Crater. Game drive searching for endangered black rhinos, pride lions, cheetahs, and flamingos on Lake Magadi. Picnic lunch by the hippo pool.
+            </p>
+          </div>
+
+          <!-- Siku 4-6 -->
+          <div class="itinerary-day-card">
+            <span class="itinerary-badge">Days 4 - 6</span>
+            <h4 style="color: var(--color-primary-dark); margin-bottom: 0.4rem;">Serengeti National Park (Endless Plains & Migration)</h4>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6;">
+              Enter the legendary Serengeti through the Naabi Hill gate. Three full days exploring central Seronera valley and migration corridors. Sunrise game drives capturing predators on kopjes. Optional dawn hot air balloon safari.
+            </p>
+          </div>
+
+          <!-- Siku 7 -->
+          <div class="itinerary-day-card">
+            <span class="itinerary-badge">Day 7</span>
+            <h4 style="color: var(--color-primary-dark); margin-bottom: 0.4rem;">Serengeti to Arusha / Flight to Zanzibar or Home</h4>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6;">
+              Morning game drive on the way to the bush airstrip or return scenic drive to Arusha. Connect to Kilimanjaro airport (JRO) for your international departure or flight to Zanzibar.
+            </p>
+          </div>
+
+          <!-- Sehemu ya Inclusions & Exclusions -->
+          <div style="margin-top: var(--space-2xl); background: #ffffff; border-radius: var(--radius-lg); padding: var(--space-xl); border: 1px solid var(--color-border);">
+            <h3 style="margin-bottom: var(--space-md); color: var(--color-primary-dark);">What's Included & Excluded</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg);">
+              <div>
+                <h4 style="font-size: 0.9rem; color: var(--color-success); margin-bottom: 0.5rem;">Included in Price</h4>
+                <ul class="inclusion-list">
+                  <li><span style="color: var(--color-success); font-weight: bold;">+</span> All national park and conservation fees</li>
+                  <li><span style="color: var(--color-success); font-weight: bold;">+</span> Private 4WD Land Cruiser with pop-up roof</li>
+                  <li><span style="color: var(--color-success); font-weight: bold;">+</span> Professional English-speaking safari guide</li>
+                  <li><span style="color: var(--color-success); font-weight: bold;">+</span> All accommodations as detailed in itinerary</li>
+                  <li><span style="color: var(--color-success); font-weight: bold;">+</span> 3 meals daily on safari + drinking water</li>
+                  <li><span style="color: var(--color-success); font-weight: bold;">+</span> Airport transfers (JRO / Arusha)</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size: 0.9rem; color: var(--color-error); margin-bottom: 0.5rem;">Not Included</h4>
+                <ul class="inclusion-list">
+                  <li><span style="color: var(--color-error); font-weight: bold;">-</span> International airfares & entry visa</li>
+                  <li><span style="color: var(--color-error); font-weight: bold;">-</span> Comprehensive travel & medical insurance</li>
+                  <li><span style="color: var(--color-error); font-weight: bold;">-</span> Safari guide gratuities / tipping</li>
+                  <li><span style="color: var(--color-error); font-weight: bold;">-</span> Premium alcoholic beverages & personal expenses</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="pricing-card-box">
+            <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--color-accent); letter-spacing: 0.08em;">Transparent Pricing</span>
+            <div style="margin: 0.5rem 0 1rem 0;">
+              <span style="font-size: 2.2rem; font-weight: 700; color: var(--color-primary-dark);">$1,850</span>
+              <span style="font-size: 0.85rem; color: var(--color-text-muted);">/ person (Double occupancy)</span>
+            </div>
+
+            <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">
+              Customizable according to lodge category (Comfort, Luxury, or Ultra-Luxury Tented). Guaranteed departure with private vehicle.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <a href="../pages/contact.html" class="btn btn-primary" style="width: 100%;">
+                Request Detailed Quote
+              </a>
+              <button type="button" onclick="openWhatsAppChat('7-Day Northern Safari Package')" class="btn btn-dark" style="width: 100%;">
+                Chat on WhatsApp
+              </button>
+            </div>
+
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dashed var(--color-border); font-size: 0.75rem; color: var(--color-text-muted);">
+              Best Price Guarantee directly from local Tanzanian operator. Zero middleman markups.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 LOMA Adventures. "Explore More. Live the Journey."</div>
+        <div>[Licensed Tour Operator in Tanzania]</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/whatsapp.js"></script>
+</body>
+</html>

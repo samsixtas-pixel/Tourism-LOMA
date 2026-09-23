@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    ============================================================
+    LOMA ADVENTURES — ZANZIBAR ISLAND EXPERIENCES
+    ============================================================
+    "The Spice Island of Zanzibar" imebuniwa kwa mtindo wa
+    Claymorphism uliochanganywa na Glassmorphism (Clay-Glass hybrid):
+    - Muonekano wa kauri/udongo wenye mng'ao laini (Clay 3D pillowy depth)
+    - Kioo chenye ukungu na mng'ao (Frosted glass backdrop-filter blur)
+    - Vivuli vya pande zote na viunzi nusu-uwazi
+    - Picha halisi ya 4K ya ndani ya assets/images/zanzibar-beach.jpg
+    - Hakuna emoji popote pale (zimebadilishwa na SVG icons safi)
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zanzibar Beach Holidays | LOMA Adventures</title>
+  <meta name="description" content="Discover Zanzibar with LOMA Adventures. Pristine turquoise beaches, historic Stone Town, spice tours, and private coastal transfers.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/sections.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+
+  <style>
+    /* Mitindo maalum ya Claymorphism + Glassmorphism kwenye Zanzibar */
+    .zanzibar-clay-hero {
+      position: relative;
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, rgba(13, 40, 28, 0.4) 0%, rgba(13, 40, 28, 0.75) 100%),
+                  url('../assets/images/zanzibar-beach.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: calc(var(--header-height) + var(--space-3xl)) var(--space-md) var(--space-4xl);
+      text-align: left;
+    }
+
+    .clay-glass-island-box {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: var(--space-3xl) var(--space-2xl);
+    }
+
+    .clay-glass-tag {
+      margin-bottom: var(--space-md);
+    }
+
+    .clay-glass-island-box h1 {
+      color: #ffffff;
+      font-size: clamp(2.3rem, 1.8rem + 2.4vw, 3.8rem);
+      margin-bottom: var(--space-md);
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+      line-height: 1.18;
+    }
+
+    .clay-glass-island-box p {
+      color: rgba(255, 255, 255, 0.95);
+      font-size: var(--text-lg);
+      line-height: 1.7;
+      max-width: 680px;
+      margin: 0 auto var(--space-xl);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    }
+  </style>
+</head>
+<body data-tour-title="Zanzibar Island Retreats">
+
+  <!-- Header -->
+  <header class="site-header scrolled" role="banner">
+    <div class="container header-container">
+      <a href="../index.html" class="brand-logo" aria-label="LOMA Adventures">
+        <img src="../assets/images/logo.png" alt="LOMA Adventures" width="180" height="62">
+      </a>
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="safari.html" class="nav-link">Safari</a>
+        <a href="kilimanjaro.html" class="nav-link">Kilimanjaro</a>
+        <a href="zanzibar.html" class="nav-link active">Zanzibar</a>
+        <a href="destinations.html" class="nav-link">Destinations</a>
+        <a href="travel-guide.html" class="nav-link">Travel Guide</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a href="contact.html" class="btn btn-primary btn-sm">Plan Island Trip</a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: var(--header-height);">
+    <!-- Hero yenye Claymorphism + Glassmorphism -->
+    <section class="zanzibar-clay-hero" aria-label="Zanzibar Island Showcase">
+      <div class="container">
+        <div class="clay-glass-card clay-glass-island-box reveal-fade">
+          <div class="clay-glass-badge clay-glass-tag">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+            <span>The Spice Island of Zanzibar</span>
+          </div>
+
+          <h1>Turquoise Coast & Historic Stone Town</h1>
+
+          <p>
+            Unwind along powder-white sand beaches after your safari or summit climb. Experience fragrant clove and vanilla plantations, Swahili-Arabian architecture, and tranquil sunset dhow sailing.
+          </p>
+
+          <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-primary btn-lg">Design Island Itinerary</a>
+            <button type="button" onclick="openWhatsAppChat('Zanzibar Beach Package')" class="btn btn-secondary btn-lg">Chat on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sehemu za Zanzibar -->
+    <section style="padding: var(--space-4xl) 0; background: var(--color-bg);">
+      <div class="container">
+        <div class="section-header-flex">
+          <div>
+            <span class="section-eyebrow">Island Highlights</span>
+            <h2 class="section-title">Zanzibar Experiences & Packages</h2>
+            <p class="section-desc">Combine thrilling safari adventure with tranquil coastal relaxation along the Indian Ocean.</p>
+          </div>
+        </div>
+
+        <div class="packages-grid">
+          <!-- 1. Stone Town Heritage -->
+          <article class="tour-card" id="stonetown">
+            <div class="tour-card-image">
+              <img src="../assets/images/zanzibar-beach.jpg" alt="Stone Town Heritage Zanzibar">
+            </div>
+            <div class="tour-card-body">
+              <h3 class="tour-card-title">Stone Town & Spice Tour</h3>
+              <div class="tour-card-route">UNESCO Heritage Alleys • Organic Spice Farms</div>
+              <div class="tour-card-meta">
+                <span class="tour-card-meta-item">Duration: 2 - 3 Days</span>
+                <span class="tour-card-meta-item">Style: Culture & History</span>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 1rem;">
+                Wander through labyrinthine alleys, historic carved doors, the House of Wonders, and vibrant Forodhani Gardens coastal market.
+              </p>
+              <div class="tour-card-footer">
+                <div>
+                  <span class="tour-card-price-label">From</span>
+                  <div class="tour-card-price-val">$480 <span>/person</span></div>
+                </div>
+                <a href="contact.html" class="btn btn-dark btn-sm">Inquire &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Nungwi & Kendwa Coast -->
+          <article class="tour-card" id="beaches">
+            <div class="tour-card-image">
+              <img src="../assets/images/zanzibar-beach.jpg" alt="Nungwi Beach Zanzibar">
+            </div>
+            <div class="tour-card-body">
+              <h3 class="tour-card-title">North Coast Beach Escape</h3>
+              <div class="tour-card-route">Nungwi & Kendwa • Non-Tidal Turquoise Waters</div>
+              <div class="tour-card-meta">
+                <span class="tour-card-meta-item">Duration: 4 - 6 Days</span>
+                <span class="tour-card-meta-item">Style: Beach Resort</span>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 1rem;">
+                Swim around the clock in calm turquoise seas, enjoy sunset catamaran cruises, and relax at boutique beachfront retreats.
+              </p>
+              <div class="tour-card-footer">
+                <div>
+                  <span class="tour-card-price-label">From</span>
+                  <div class="tour-card-price-val">$790 <span>/person</span></div>
+                </div>
+                <a href="contact.html" class="btn btn-dark btn-sm">Inquire &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Safari Blue Ocean Excursion -->
+          <article class="tour-card" id="activities">
+            <div class="tour-card-image">
+              <img src="../assets/images/zanzibar-beach.jpg" alt="Safari Blue Zanzibar">
+            </div>
+            <div class="tour-card-body">
+              <h3 class="tour-card-title">Safari Blue & Marine Excursion</h3>
+              <div class="tour-card-route">Menai Bay • Sandbanks • Snorkeling Reefs</div>
+              <div class="tour-card-meta">
+                <span class="tour-card-meta-item">Duration: Full Day</span>
+                <span class="tour-card-meta-item">Style: Ocean Marine Tour</span>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 1rem;">
+                Sail on hand-crafted wooden dhows, snorkel vibrant coral reefs, swim in hidden mangrove lagoons, and feast on fresh grilled seafood.
+              </p>
+              <div class="tour-card-footer">
+                <div>
+                  <span class="tour-card-price-label">From</span>
+                  <div class="tour-card-price-val">$120 <span>/person</span></div>
+                </div>
+                <a href="contact.html" class="btn btn-dark btn-sm">Inquire &rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-bottom">
+      <div>&copy; 2026 LOMA Adventures. "Explore More. Live the Journey."</div>
+      <div>[Licensed Tour Operator in Tanzania]</div>
+    </div>
+  </footer>
+
+  <script src="../js/whatsapp.js"></script>
+</body>
+</html>
