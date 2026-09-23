@@ -844,7 +844,7 @@ textarea.form-control {
 }
 
 /*gallery for the Desktop wooden change*/
-.gallery-track{
+/*.gallery-track{
   display: grid;
   grid-template-columns: 
       repeat(4, minmax(0, 1fr));
@@ -854,7 +854,7 @@ textarea.form-control {
   max-width: 1400px;
   margin: 0 auto;
   box-sizing: border-box;    
-}
+}*/
 
 
 @media (max-width: 768px) {
