@@ -680,6 +680,9 @@ textarea.form-control {
 
 .wooden-frame-wrapper {
   position: relative;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   background: linear-gradient(135deg, #442a17 0%, #2f1c0f 40%, #1f1209 100%);
   border-radius: var(--radius-md);
   padding: 16px;
@@ -844,21 +847,24 @@ textarea.form-control {
 }
 
 /*gallery for the Desktop wooden change*/
-/*.gallery-track{
+.gallery-track{
   display: grid;
   grid-template-columns: 
       repeat(4, minmax(0, 1fr));
   
   gap: 28px;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  box-sizing: border-box;    
-}*/
+  padding: 0 24px;
+  box-sizing: border-box;
+  align-items: stretch;    
+}
 
 
 @media (max-width: 768px) {
   /*gallery section */
+  
   .gallery-section {
     width: 100%;
     max-width: 100%;
