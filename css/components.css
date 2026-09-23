@@ -850,7 +850,7 @@ textarea.form-control {
 .gallery-track{
   display: grid;
   grid-template-columns: 
-      repeat(4, minmax(0, 1fr));
+      repeat(4, minmax(240, 1fr));
   
   gap: 28px;
   width: 100%;
