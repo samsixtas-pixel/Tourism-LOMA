@@ -784,3 +784,72 @@ textarea.form-control {
 .wooden-frame-cta:hover {
   color: var(--color-accent);
 }
+
+
+@media (max-width: 768px) {
+  /*gallery section*/
+  .gallery-section {
+    width: 100%;
+    max-width: 100%;
+
+    overflow: hidden;
+
+    padding: 30px 0 80px;
+  }
+
+  .gallery-track {
+    display: flex;
+
+    gap: 18px;
+
+    width: max-content;
+    padding-left: 32px;
+    padding-right: 32px;
+
+    transition: 
+            transform 0.75s cubic-bezier(
+              0.22,
+              1,
+              0.36,
+              1
+            );
+
+  }
+  /* CARD SHRINKING PART*/
+  .wooden-frame-wrapper,
+  .gallery-card{
+    flex: 0 0 290px;
+    width: 290px;
+    min-width: 290px;
+    max-width: 290px;
+  }
+
+  /*woooden frame */
+  .wooden-frame-wrapper{
+    padding: 12px;
+    border-radius: 18px;
+    box-sizing: border-box;
+  }
+
+  .gallery-card .card-inner{
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .wooden-frame-artwork {
+    width: 100%;
+  
+    overflow: hidden;
+  
+    aspect-ratio: 4 / 3;
+  
+  }
+
+  .wooden-frame-artwork img {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

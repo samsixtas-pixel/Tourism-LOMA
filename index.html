@@ -603,6 +603,7 @@
          6. AUTHENTIC EXPERIENCES (WOODEN FRAME ARTWORK GALLERY)
          ============================================================ -->
     <section class="journal-section" id="authentic-experiences" aria-label="Curated Artwork Gallery">
+      
       <div class="container">
         <div class="section-header-flex">
           <div>
@@ -614,6 +615,8 @@
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg);">
+
+        <div class="gallery-track">
           <!-- Artwork 1: Wildlife Safaris -->
           <article class="wooden-frame-wrapper reveal-fade">
             <div class="wooden-frame-inner">
@@ -673,6 +676,7 @@
               </div>
             </div>
           </article>
+        </div>  
         </div>
       </div>
     </section>
@@ -1425,6 +1429,86 @@
   <script src="js/save-compare.js"></script>
   <script src="js/forms.js"></script>
   <script src="js/whatsapp.js"></script>
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const track =
+          document.querySelector(".gallery-track");
+
+      const cards =
+          document.querySelectorAll(
+              ".wooden-frame-wrapper"
+          );
+
+      if (!track || !cards.length) return;
+
+
+      let currentIndex = 0;
+
+
+      function isMobile() {
+          return window.innerWidth <= 768;
+      }
+
+
+      function moveCards() {
+
+          if (!isMobile()) {
+            track.style.transform =
+                "translateX(0)";
+
+            return;
+          }
+
+
+        const cardWidth =
+            cards[0].offsetWidth;
+
+        const gap = 18;
+
+
+        currentIndex++;
+
+
+        if (currentIndex >= cards.length) {
+            currentIndex = 0;
+        }
+
+
+        const distance =
+            currentIndex *
+            (cardWidth + gap);
+
+
+        track.style.transform =
+            `translateX(-${distance}px)`;
+    }
+
+
+    setInterval(moveCards, 4500);
+
+
+    window.addEventListener(
+        "resize",
+        () => {
+
+            if (!isMobile()) {
+
+                currentIndex = 0;
+
+                track.style.transform =
+                    "translateX(0)";
+            }
+
+        }
+    );
+
+  });
+
+  </script>
+
   <script>
     const drawer =
            document.getElementById("mobileDrawer");
@@ -1445,5 +1529,6 @@
       document.body.classList.remove("drawer-open");
     }
   </script>
+
 </body>
 </html>
