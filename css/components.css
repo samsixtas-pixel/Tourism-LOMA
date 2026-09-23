@@ -848,7 +848,7 @@ textarea.form-control {
 
 /*gallery for the Desktop wooden change*/
 .gallery-track{
-  display: grid;
+  display: flex;
   grid-template-columns: 
       repeat(4, minmax(240, 1fr));
   
