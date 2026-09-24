@@ -678,199 +678,430 @@ textarea.form-control {
  * - Picha inakaa ndani halisi kama kwenye jumba la sanaa (Modern African Art Gallery)
  */
 
+/* =========================================================
+   LOMA — WOODEN GALLERY CARD
+   Desktop: 4 normal-sized cards in one horizontal row
+========================================================= */
+
 .wooden-frame-wrapper {
   position: relative;
-  width: 280px;
-  min-width: 280px;
-  max-width: 280px;
+
+  /* The grid controls the actual card width */
+  width: 100%;
+  min-width: 0;
+
   box-sizing: border-box;
-  background: linear-gradient(135deg, #442a17 0%, #2f1c0f 40%, #1f1209 100%);
-  border-radius: var(--radius-md);
+
   padding: 16px;
+
+  /* African dark polished wood */
+  background:
+    linear-gradient(
+      135deg,
+      #2b1b12 0%,
+      #4a2d1b 18%,
+      #21140e 42%,
+      #5a3820 67%,
+      #29180f 100%
+    );
+
+  border: 1px solid rgba(255, 226, 185, 0.25);
+
+  border-radius: var(--radius-md);
+
   box-shadow:
     0 22px 45px rgba(35, 20, 10, 0.30),
     0 7px 15px rgba(0, 0, 0, 0.20),
     inset 0 1px 1px rgba(255, 255, 255, 0.28),
-    inset 0 -2px 5px rgba(0, 0, 0, 0.45);  
-  border: 1px solid rgba(255, 226, 185, 0.25)/*#1a0e06*/;
-  background: 
-          linear-gradient(
-            135deg,
-            #2b1b12 0%,
-            #4a2d1b 18%,
-            #21140e 42%,
-            #5a3820 67%,
-            #29180f 100%
-          );
+    inset 0 -2px 5px rgba(0, 0, 0, 0.45);
+
   overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
   display: flex;
   flex-direction: column;
+
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+
+/* =========================================================
+   WOOD GRAIN
+========================================================= */
 
 .wooden-frame-wrapper::before {
   content: "";
+
   position: absolute;
   inset: 0;
+
   pointer-events: none;
+
   opacity: 0.22;
-  background: 
-        repeating-linear-gradient(
-          8deg,
-          transparent 0px,
-          transparent 7px,
-          rgba(255,220, 170,0.08) 8px,
-          transparent 10px,
-          transparent 20px 
-        );
+
+  background:
+    repeating-linear-gradient(
+      8deg,
+      transparent 0px,
+      transparent 7px,
+      rgba(255, 220, 170, 0.08) 8px,
+      transparent 10px,
+      transparent 20px
+    );
+
   mix-blend-mode: overlay;
-  z-index: 1;      
+
+  z-index: 1;
 }
 
-.wooden-frame-wrapper::after{
+
+/* =========================================================
+   POLISHED WOOD / GLASS REFLECTION
+========================================================= */
+
+.wooden-frame-wrapper::after {
   content: "";
+
   position: absolute;
+
   top: -40%;
   left: -70%;
+
   width: 55%;
   height: 180%;
+
   transform: rotate(25deg);
-  
-  background: 
-        repeating-linear-gradient(
-          90deg,
-          transparent ,
-          rgba(255,255, 255,0.05) 8px,
-          rgba(255,255, 255,0.30) 8px,
-          rgba(255,255, 255,0.06) 8px,
-          transparent
-          
-        );
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.05) 25%,
+      rgba(255, 255, 255, 0.30) 50%,
+      rgba(255, 255, 255, 0.06) 75%,
+      transparent 100%
+    );
+
   filter: blur(2px);
-  pointer-events: none;      
+
+  pointer-events: none;
+
   transition: left 0.8s ease;
-  z-index: 5;      
+
+  z-index: 5;
 }
+
+
+/* =========================================================
+   HOVER EFFECT
+========================================================= */
 
 .wooden-frame-wrapper:hover {
   transform: translateY(-8px);
+
   box-shadow:
     0 30px 60px rgba(35, 20, 10, 0.38),
     0 10px 20px rgba(0, 0, 0, 0.22),
     inset 0 1px 3px rgba(255, 255, 255, 0.35),
-    /*inset 0 -2px 5px rgba(0, 0, 0, 0.7);*/
+    inset 0 -2px 5px rgba(0, 0, 0, 0.45);
 }
+
 
 .wooden-frame-wrapper:hover::after {
   left: 130%;
 }
 
-/* Kitanzi cha dhahabu/mkeka wa ndani (Matboard / Inner bevel border) */
+
+/* =========================================================
+   INNER IVORY MATBOARD
+========================================================= */
+
 .wooden-frame-inner {
   position: relative;
+
   width: 100%;
   min-width: 0;
+  max-width: 100%;
+
   box-sizing: border-box;
-  background-color: #f7f4ea; /* Fine ivory gallery matboard */
+
+  background-color: #f7f4ea;
+
   padding: 12px;
+
   border-radius: 4px;
+
   box-shadow:
     inset 0 2px 5px rgba(0, 0, 0, 0.45),
     inset 0 -1px 2px rgba(255, 255, 255, 0.4),
-    0 0 0 1px #a4813f; /* Subtle golden filet line */
+    0 0 0 1px #a4813f;
+
   overflow: hidden;
+
   display: flex;
   flex-direction: column;
+
+  z-index: 2;
 }
+
+
+/* =========================================================
+   ARTWORK
+========================================================= */
 
 .wooden-frame-artwork {
   position: relative;
+
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+
   overflow: hidden;
+
   border-radius: 2px;
+
   aspect-ratio: 4 / 3;
-  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3);
+
+  box-shadow:
+    inset 0 2px 6px rgba(0, 0, 0, 0.3);
+
   background-color: #121c17;
+
+  flex-shrink: 0;
 }
+
 
 .wooden-frame-artwork img {
+  display: block;
+
   width: 100%;
   height: 100%;
+
+  max-width: 100%;
+
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+  transition:
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.wooden-frame-wrapper:hover .wooden-frame-artwork img {
+
+.wooden-frame-wrapper:hover
+.wooden-frame-artwork img {
   transform: scale(1.05);
 }
 
-/* Bamba la kielelezo chini ya mchoro (Gallery Brass Plaque caption) */
+
+/* =========================================================
+   CAPTION
+========================================================= */
+
 .wooden-frame-caption {
+  width: 100%;
+
+  box-sizing: border-box;
+
   padding: 14px 4px 4px;
+
   text-align: left;
 }
 
+
 .wooden-frame-category {
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--color-accent);
-  margin-bottom: 4px;
   display: block;
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.15em;
+
+  color: var(--color-accent);
+
+  margin-bottom: 4px;
 }
+
 
 .wooden-frame-title {
   font-family: var(--font-heading);
+
   font-size: var(--text-lg);
+
   color: var(--color-primary-dark);
-  margin-bottom: 6px;
+
+  margin: 0 0 6px;
+
   line-height: 1.25;
 }
 
+
 .wooden-frame-desc {
   font-size: 0.8rem;
+
   color: var(--color-text-muted);
+
   line-height: 1.55;
-  margin-bottom: 12px;
+
+  margin: 0 0 12px;
 }
+
 
 .wooden-frame-cta {
   display: inline-flex;
+
   align-items: center;
+
   gap: 0.35rem;
+
   font-size: 0.75rem;
+
   font-weight: 700;
+
   text-transform: uppercase;
+
   letter-spacing: 0.08em;
+
   color: var(--color-primary);
+
   transition: color var(--transition-fast);
 }
+
 
 .wooden-frame-cta:hover {
   color: var(--color-accent);
 }
 
-/*gallery for the Desktop wooden change*/
-.gallery-track{
+
+/* =========================================================
+   DESKTOP GALLERY
+   4 NORMAL-SIZED CARDS
+========================================================= */
+
+.gallery-track {
   display: grid;
-  /*flex-direction: row;*/
-  /*max-width: none;*/
-  grid-template-columns: 
-      repeat(4, 280px);
-  
+
+  /*
+    Four equal cards.
+
+    At 1200px:
+    approximately 279px each.
+
+    At smaller desktop widths:
+    cards automatically become slightly smaller
+    instead of becoming extremely thin.
+  */
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
   gap: 28px;
-  width: fit-content;
-  max-width: 100%;
+
+  width: min(1200px, calc(100% - 48px));
+
   margin: 0 auto;
-  padding: 0 24px;
+
+  padding: 0;
+
   box-sizing: border-box;
-  align-items: stretch;   
-  /*padding-left: 32px;
-  padding-right: 32px;
-  box-sizing: border-box; */
+
+  align-items: stretch;
 }
 
 
+/* =========================================================
+   IMPORTANT:
+   Make every direct card occupy its grid column
+========================================================= */
+
+.gallery-track > .wooden-frame-wrapper {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .gallery-track {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    width: min(760px, calc(100% - 40px));
+
+    gap: 24px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   Keep cards normal-sized.
+   Do NOT use the desktop 4-column grid here.
+========================================================= */
+
+/*@media (max-width: 768px) {
+
+  .gallery-track {
+    display: flex;
+
+    flex-direction: row;
+
+    gap: 18px;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    padding:
+      0 20px;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+  }
+
+
+  .gallery-track::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .gallery-track > .wooden-frame-wrapper {
+    flex: 0 0 82%;
+
+    width: 82%;
+
+    max-width: 82%;
+
+    min-width: 82%;
+
+    scroll-snap-align: center;
+  }
+
+}
+*/
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+
+/*Phone display customization*/
 @media (max-width: 768px) {
   /*gallery section */
   
