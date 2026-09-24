@@ -672,7 +672,7 @@ textarea.form-control {
  * 7. PREMIUM WOODEN FRAME ARTWORK SYSTEM (GALLERY FRAMES)
  * ============================================================
  * Mfumo wa viunzi halisi vya mbao (Premium African Wood Frame):
- * - Muonekano wa asili wa mbao (Mvule au Ebony wood finish)
+ * - Muonekano wa asili wa mbao (Mvule au wood finish)
  * - Mipaka ya ndani yenye kina na mwanga (Realistic inner bevel & shadow)
  * - Hakuna kamba, hakuna misumari, wala madoido ya bembea (No strings, nails or swinging)
  * - Picha inakaa ndani halisi kama kwenye jumba la sanaa (Modern African Art Gallery)
@@ -855,7 +855,7 @@ textarea.form-control {
   /*flex-direction: row;*/
   /*max-width: none;*/
   grid-template-columns: 
-      repeat(4, minmax(0, 1fr));
+      repeat(4, 260px);
   
   gap: 28px;
   width: 50%;
