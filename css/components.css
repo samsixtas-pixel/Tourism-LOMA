@@ -680,9 +680,9 @@ textarea.form-control {
 
 .wooden-frame-wrapper {
   position: relative;
-  width: 260px;
-  min-width: 260px;
-  max-width: 260px;
+  width: 280px;
+  min-width: 280px;
+  max-width: 280px;
   box-sizing: border-box;
   background: linear-gradient(135deg, #442a17 0%, #2f1c0f 40%, #1f1209 100%);
   border-radius: var(--radius-md);
@@ -768,7 +768,7 @@ textarea.form-control {
 /* Kitanzi cha dhahabu/mkeka wa ndani (Matboard / Inner bevel border) */
 .wooden-frame-inner {
   position: relative;
-  width: 50%;
+  width: 100%;
   min-width: 0;
   box-sizing: border-box;
   background-color: #f7f4ea; /* Fine ivory gallery matboard */
@@ -856,7 +856,7 @@ textarea.form-control {
   /*flex-direction: row;*/
   /*max-width: none;*/
   grid-template-columns: 
-      repeat(4, 260px);
+      repeat(4, 280px);
   
   gap: 28px;
   width: fit-content;
