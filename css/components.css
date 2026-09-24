@@ -858,9 +858,12 @@ textarea.form-control {
   width: max-content;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  /*padding: 0 24px;*/
   box-sizing: border-box;
-  align-items: stretch;    
+  align-items: stretch;   
+  padding-left: 32px;
+  padding-right: 32px;
+  box-sizing: border-box; 
 }
 
 
