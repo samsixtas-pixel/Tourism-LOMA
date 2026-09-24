@@ -11,7 +11,7 @@
 
 // Nambari ya WhatsApp ya mteja.
 // Weka nambari halisi ya LOMA Adventures hapa baadaye mfano: "2557XXXXXXXX"
-const WHATSAPP_NUMBER = "[CLIENT_WHATSAPP_NUMBER]";
+const WHATSAPP_NUMBER = "255629866257";
 
 /**
  * Tengeneza kiungo cha WhatsApp chenye ujumbe maalum

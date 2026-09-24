@@ -1198,3 +1198,253 @@ textarea.form-control {
     object-fit: cover;
   }
 }
+
+
+
+/* =========================================================
+   CLOTH / CLAYMORPHISM — EXPLORE EXPERIENCES BUTTON (ULTRA-HD / 4K REALISM)
+   ========================================================= */
+
+.explore-experiences-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  min-height: 64px;
+  min-width: 290px;
+  padding: 18px 36px;
+
+  border: none;
+  border-radius: 24px;
+
+  /* 
+   * Fully transparent overlay to make the Maasai blanket cloth visible with 100% clarity.
+   * Zoomed out blanket pattern (background-size: 160px auto) so repeating plaid checks are crisp & clear.
+   */
+  background-image: url("../assets/images/blanket1.jpg");
+  background-size: 160px auto;
+  background-position: center center;
+  background-repeat: repeat;
+
+  color: #ffffff;
+
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  /* 
+   * 4K Tactile Claymorphism Depth + Surrounding Outer Cloth Fringe/Thread Halo:
+   * 1. 0 0 0 3px: Outer black textile border ring
+   * 2. 0 0 0 6px: Outermost frayed fabric fringe outline
+   * 3. Multi-tier soft air drop shadows
+   * 4. Inner clay pillow cushion inset shadows
+   */
+  box-shadow:
+    /* Surrounding outer cloth thread ring (black woven border) */
+    0 0 0 2.5px rgba(18, 18, 18, 0.85),
+    /* Frayed outer thread halo / cloth edge */
+    0 0 0 5.5px rgba(255, 255, 255, 0.18),
+    /* Deep ambient contact shadow */
+    0 24px 44px -8px rgba(0, 0, 0, 0.55),
+    /* Mid-range directional drop shadow */
+    0 12px 24px -4px rgba(0, 0, 0, 0.40),
+    /* Ground adhesion micro shadow */
+    0 3px 6px -1px rgba(0, 0, 0, 0.30),
+    /* Top pillow highlight */
+    inset 0 3px 6px rgba(255, 255, 255, 0.45),
+    /* Bottom compressed fabric rim shade */
+    inset 0 -5px 12px rgba(0, 0, 0, 0.55),
+    /* Diagonal light highlights & shades */
+    inset 4px 4px 10px rgba(255, 255, 255, 0.25),
+    inset -5px -6px 14px rgba(0, 0, 0, 0.40);
+
+  overflow: visible; /* Allows outer surrounding fringe threads to be visible */
+  transform: translateY(0);
+  will-change: transform, box-shadow, filter;
+
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2),
+    box-shadow 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2),
+    filter 0.3s ease;
+}
+
+
+/* ---------------------------------------------------------
+   VISIBLE BLACK THREADS & WEAVE OVERLAY
+   --------------------------------------------------------- */
+
+.explore-experiences-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+
+  /* 
+   * Prominent black threads running across warp and weft,
+   * simulating authentic hand-spun African textile threads.
+   */
+  background:
+    /* Fine black horizontal threads */
+    repeating-linear-gradient(
+      0deg,
+      rgba(15, 15, 15, 0.42) 0px,
+      rgba(15, 15, 15, 0.42) 1.5px,
+      transparent 1.5px,
+      transparent 6px
+    ),
+    /* Fine black vertical threads */
+    repeating-linear-gradient(
+      90deg,
+      rgba(15, 15, 15, 0.42) 0px,
+      rgba(15, 15, 15, 0.42) 1.5px,
+      transparent 1.5px,
+      transparent 6px
+    ),
+    /* Subtle 45-deg cross-stitch twill */
+    repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.15) 0px,
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+/* ---------------------------------------------------------
+   OUTSIDE SURROUNDING CLOTH THREADS / STITCHED FRINGE
+   --------------------------------------------------------- */
+
+.explore-experiences-btn::after {
+  content: "";
+  position: absolute;
+  /* Extends 5px outside the button body to form physical surrounding threads */
+  inset: -6px;
+  border-radius: 30px;
+
+  /* Authentic woven outer thread border with visible black stitches */
+  border: 2px dashed rgba(20, 20, 20, 0.90);
+
+  box-shadow:
+    /* Inner stitch line in contrasting chalk/linen */
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.35),
+    /* Outer tactile fabric fringe fuzz */
+    0 0 6px 1px rgba(0, 0, 0, 0.45);
+
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+/* ---------------------------------------------------------
+   BOLD HIGH-DEFINITION EMBOSSED TYPOGRAPHY
+   --------------------------------------------------------- */
+
+.explore-experiences-btn span {
+  position: relative;
+  z-index: 5;
+
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+
+  /* High contrast multi-layer embossed text-shadow for 100% clarity over plaid */
+  text-shadow:
+    0 1px 1px rgba(255, 255, 255, 0.35),
+    0 2px 4px rgba(0, 0, 0, 0.85),
+    0 4px 10px rgba(0, 0, 0, 0.70),
+    0 0 18px rgba(0, 0, 0, 0.65);
+}
+
+
+/* ---------------------------------------------------------
+   LARGER BOLD ARROW
+   --------------------------------------------------------- */
+
+.explore-experiences-btn .arrow {
+  position: relative;
+  z-index: 5;
+
+  margin-left: 6px;
+  font-size: 1.55rem; /* Larger, prominent arrow */
+  line-height: 1;
+  font-weight: 900;
+  display: inline-block;
+
+  color: #ffffff;
+  text-shadow:
+    0 1px 1px rgba(255, 255, 255, 0.35),
+    0 2px 4px rgba(0, 0, 0, 0.85),
+    0 4px 10px rgba(0, 0, 0, 0.70),
+    0 0 16px rgba(0, 0, 0, 0.60);
+
+  transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+
+
+/* ---------------------------------------------------------
+   HOVER STATE — PHYSICAL CUSHION LIFT & GLOW
+   --------------------------------------------------------- */
+
+.explore-experiences-btn:hover {
+  transform: translateY(-6px) scale(1.02);
+
+  box-shadow:
+    0 0 0 2.5px rgba(18, 18, 18, 0.95),
+    0 0 0 6px rgba(255, 255, 255, 0.28),
+    /* High elevation air shadow */
+    0 32px 55px -10px rgba(0, 0, 0, 0.58),
+    0 16px 28px -4px rgba(0, 0, 0, 0.42),
+    0 4px 8px rgba(0, 0, 0, 0.30),
+    /* Brighter pillow compression highlights */
+    inset 0 4px 8px rgba(255, 255, 255, 0.55),
+    inset 0 -6px 14px rgba(0, 0, 0, 0.55),
+    inset 5px 5px 14px rgba(255, 255, 255, 0.32),
+    inset -6px -7px 16px rgba(0, 0, 0, 0.45);
+
+  filter: saturate(1.15) contrast(1.08) brightness(1.04);
+}
+
+.explore-experiences-btn:hover .arrow {
+  transform: translateX(8px);
+}
+
+.explore-experiences-btn:hover::after {
+  border-color: rgba(10, 10, 10, 1);
+  box-shadow:
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.50),
+    0 0 10px 2px rgba(0, 0, 0, 0.55);
+}
+
+
+/* ---------------------------------------------------------
+   ACTIVE / TOUCH PRESS — SOFT CLAY COMPRESSION
+   --------------------------------------------------------- */
+
+.explore-experiences-btn:active {
+  transform: translateY(3px) scale(0.975);
+
+  box-shadow:
+    0 0 0 2px rgba(18, 18, 18, 0.90),
+    0 0 0 4.5px rgba(255, 255, 255, 0.15),
+    0 8px 16px rgba(0, 0, 0, 0.40),
+    0 2px 4px rgba(0, 0, 0, 0.30),
+    inset 0 4px 12px rgba(0, 0, 0, 0.60),
+    inset 6px 6px 16px rgba(0, 0, 0, 0.45),
+    inset -3px -3px 8px rgba(255, 255, 255, 0.25);
+
+  filter: saturate(1.05) brightness(0.97);
+}
