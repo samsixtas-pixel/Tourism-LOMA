@@ -481,6 +481,12 @@ textarea.form-control {
    CLOTH / CLAYMORPHISM — EXPLORE EXPERIENCES BUTTON (ULTRA-HD / 4K REALISM)
    ========================================================= */
 
+/* =========================================================
+   LOMA — EXPLORE EXPERIENCES BUTTON
+   Premium Maasai-cloth / tactile fabric treatment
+   Cleaned and isolated so it does not interfere with gallery cards.
+========================================================= */
+
 .explore-experiences-btn {
   position: relative;
   display: inline-flex;
@@ -488,156 +494,108 @@ textarea.form-control {
   justify-content: center;
   gap: 14px;
 
-  min-height: 64px;
   min-width: 290px;
+  min-height: 64px;
   padding: 18px 36px;
+  box-sizing: border-box;
 
-  border: none;
+  border: 0;
   border-radius: 24px;
 
-  /* 
-   * Fully transparent overlay to make the Maasai blanket cloth visible with 100% clarity.
-   * Zoomed out blanket pattern (background-size: 160px auto) so repeating plaid checks are crisp & clear.
-   */
   background-image: url("../assets/images/blanket1.jpg");
   background-size: 160px auto;
-  background-position: center center;
+  background-position: center;
   background-repeat: repeat;
 
-  color: #ffffff;
-
+  color: #fff;
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 800;
   letter-spacing: 0.12em;
+  line-height: 1;
   text-transform: uppercase;
   text-decoration: none;
 
   cursor: pointer;
+  overflow: visible;
+  isolation: isolate;
 
-  /* 
-   * 4K Tactile Claymorphism Depth + Surrounding Outer Cloth Fringe/Thread Halo:
-   * 1. 0 0 0 3px: Outer black textile border ring
-   * 2. 0 0 0 6px: Outermost frayed fabric fringe outline
-   * 3. Multi-tier soft air drop shadows
-   * 4. Inner clay pillow cushion inset shadows
-   */
   box-shadow:
-    /* Surrounding outer cloth thread ring (black woven border) */
     0 0 0 2.5px rgba(18, 18, 18, 0.85),
-    /* Frayed outer thread halo / cloth edge */
     0 0 0 5.5px rgba(255, 255, 255, 0.18),
-    /* Deep ambient contact shadow */
     0 24px 44px -8px rgba(0, 0, 0, 0.55),
-    /* Mid-range directional drop shadow */
     0 12px 24px -4px rgba(0, 0, 0, 0.40),
-    /* Ground adhesion micro shadow */
     0 3px 6px -1px rgba(0, 0, 0, 0.30),
-    /* Top pillow highlight */
     inset 0 3px 6px rgba(255, 255, 255, 0.45),
-    /* Bottom compressed fabric rim shade */
     inset 0 -5px 12px rgba(0, 0, 0, 0.55),
-    /* Diagonal light highlights & shades */
     inset 4px 4px 10px rgba(255, 255, 255, 0.25),
     inset -5px -6px 14px rgba(0, 0, 0, 0.40);
 
-  overflow: visible; /* Allows outer surrounding fringe threads to be visible */
   transform: translateY(0);
-  will-change: transform, box-shadow, filter;
-
   transition:
     transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2),
     box-shadow 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2),
     filter 0.3s ease;
 }
 
-
-/* ---------------------------------------------------------
-   VISIBLE BLACK THREADS & WEAVE OVERLAY
-   --------------------------------------------------------- */
-
+/* Woven thread texture */
 .explore-experiences-btn::before {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 24px;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
 
-  /* 
-   * Prominent black threads running across warp and weft,
-   * simulating authentic hand-spun African textile threads.
-   */
   background:
-    /* Fine black horizontal threads */
     repeating-linear-gradient(
       0deg,
-      rgba(15, 15, 15, 0.42) 0px,
+      rgba(15, 15, 15, 0.42) 0,
       rgba(15, 15, 15, 0.42) 1.5px,
       transparent 1.5px,
       transparent 6px
     ),
-    /* Fine black vertical threads */
     repeating-linear-gradient(
       90deg,
-      rgba(15, 15, 15, 0.42) 0px,
+      rgba(15, 15, 15, 0.42) 0,
       rgba(15, 15, 15, 0.42) 1.5px,
       transparent 1.5px,
       transparent 6px
     ),
-    /* Subtle 45-deg cross-stitch twill */
     repeating-linear-gradient(
       45deg,
-      rgba(0, 0, 0, 0.15) 0px,
+      rgba(0, 0, 0, 0.15) 0,
       rgba(0, 0, 0, 0.15) 1px,
       transparent 1px,
       transparent 4px
     );
-
-  pointer-events: none;
-  z-index: 1;
 }
 
-
-/* ---------------------------------------------------------
-   OUTSIDE SURROUNDING CLOTH THREADS / STITCHED FRINGE
-   --------------------------------------------------------- */
-
+/* Outer stitched edge */
 .explore-experiences-btn::after {
   content: "";
   position: absolute;
-  /* Extends 5px outside the button body to form physical surrounding threads */
   inset: -6px;
-  border-radius: 30px;
-
-  /* Authentic woven outer thread border with visible black stitches */
+  z-index: -2;
   border: 2px dashed rgba(20, 20, 20, 0.90);
+  border-radius: 30px;
+  pointer-events: none;
 
   box-shadow:
-    /* Inner stitch line in contrasting chalk/linen */
     inset 0 0 0 1.5px rgba(255, 255, 255, 0.35),
-    /* Outer tactile fabric fringe fuzz */
     0 0 6px 1px rgba(0, 0, 0, 0.45);
-
-  pointer-events: none;
-  z-index: 2;
 }
-
-
-/* ---------------------------------------------------------
-   BOLD HIGH-DEFINITION EMBOSSED TYPOGRAPHY
-   --------------------------------------------------------- */
 
 .explore-experiences-btn span {
   position: relative;
-  z-index: 5;
-
-  color: #ffffff;
+  z-index: 2;
+  color: #fff;
   font-family: var(--font-body);
-  font-weight: 800;
   font-size: 0.95rem;
+  font-weight: 800;
   letter-spacing: 0.12em;
+  line-height: 1;
   white-space: nowrap;
-
-  /* High contrast multi-layer embossed text-shadow for 100% clarity over plaid */
   text-shadow:
     0 1px 1px rgba(255, 255, 255, 0.35),
     0 2px 4px rgba(0, 0, 0, 0.85),
@@ -645,53 +603,36 @@ textarea.form-control {
     0 0 18px rgba(0, 0, 0, 0.65);
 }
 
-
-/* ---------------------------------------------------------
-   LARGER BOLD ARROW
-   --------------------------------------------------------- */
-
 .explore-experiences-btn .arrow {
   position: relative;
-  z-index: 5;
-
-  margin-left: 6px;
-  font-size: 1.55rem; /* Larger, prominent arrow */
-  line-height: 1;
-  font-weight: 900;
+  z-index: 2;
   display: inline-block;
-
-  color: #ffffff;
+  margin-left: 6px;
+  color: #fff;
+  font-size: 1.55rem;
+  font-weight: 900;
+  line-height: 1;
   text-shadow:
     0 1px 1px rgba(255, 255, 255, 0.35),
     0 2px 4px rgba(0, 0, 0, 0.85),
     0 4px 10px rgba(0, 0, 0, 0.70),
     0 0 16px rgba(0, 0, 0, 0.60);
-
   transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2);
 }
 
-
-/* ---------------------------------------------------------
-   HOVER STATE — PHYSICAL CUSHION LIFT & GLOW
-   --------------------------------------------------------- */
-
 .explore-experiences-btn:hover {
   transform: translateY(-6px) scale(1.02);
-
+  filter: saturate(1.15) contrast(1.08) brightness(1.04);
   box-shadow:
     0 0 0 2.5px rgba(18, 18, 18, 0.95),
     0 0 0 6px rgba(255, 255, 255, 0.28),
-    /* High elevation air shadow */
     0 32px 55px -10px rgba(0, 0, 0, 0.58),
     0 16px 28px -4px rgba(0, 0, 0, 0.42),
     0 4px 8px rgba(0, 0, 0, 0.30),
-    /* Brighter pillow compression highlights */
     inset 0 4px 8px rgba(255, 255, 255, 0.55),
     inset 0 -6px 14px rgba(0, 0, 0, 0.55),
     inset 5px 5px 14px rgba(255, 255, 255, 0.32),
     inset -6px -7px 16px rgba(0, 0, 0, 0.45);
-
-  filter: saturate(1.15) contrast(1.08) brightness(1.04);
 }
 
 .explore-experiences-btn:hover .arrow {
@@ -705,14 +646,9 @@ textarea.form-control {
     0 0 10px 2px rgba(0, 0, 0, 0.55);
 }
 
-
-/* ---------------------------------------------------------
-   ACTIVE / TOUCH PRESS — SOFT CLAY COMPRESSION
-   --------------------------------------------------------- */
-
 .explore-experiences-btn:active {
   transform: translateY(3px) scale(0.975);
-
+  filter: saturate(1.05) brightness(0.97);
   box-shadow:
     0 0 0 2px rgba(18, 18, 18, 0.90),
     0 0 0 4.5px rgba(255, 255, 255, 0.15),
@@ -721,12 +657,46 @@ textarea.form-control {
     inset 0 4px 12px rgba(0, 0, 0, 0.60),
     inset 6px 6px 16px rgba(0, 0, 0, 0.45),
     inset -3px -3px 8px rgba(255, 255, 255, 0.25);
-
-  filter: saturate(1.05) brightness(0.97);
 }
 
+@media (max-width: 600px) {
+  .explore-experiences-btn {
+    width: min(100%, 340px);
+    min-width: 0;
+    min-height: 58px;
+    padding: 16px 24px;
+    gap: 10px;
+    border-radius: 20px;
+  }
 
+  .explore-experiences-btn::after {
+    border-radius: 26px;
+  }
 
+  .explore-experiences-btn span {
+    font-size: 0.82rem;
+    letter-spacing: 0.09em;
+  }
+
+  .explore-experiences-btn .arrow {
+    font-size: 1.3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .explore-experiences-btn,
+  .explore-experiences-btn .arrow {
+    transition: none;
+  }
+
+  .explore-experiences-btn:hover {
+    transform: none;
+  }
+
+  .explore-experiences-btn:hover .arrow {
+    transform: none;
+  }
+}
 
 
 /* ============================================================
@@ -927,30 +897,18 @@ textarea.form-control {
  * ============================================================
  * 7. PREMIUM WOODEN FRAME ARTWORK SYSTEM (GALLERY FRAMES)
  * ============================================================
- * Mfumo wa viunzi halisi vya mbao (Premium African Wood Frame):
- * - Muonekano wa asili wa mbao (Mvule au wood finish)
- * - Mipaka ya ndani yenye kina na mwanga (Realistic inner bevel & shadow)
- * - Hakuna kamba, hakuna misumari, wala madoido ya bembea (No strings, nails or swinging)
- * - Picha inakaa ndani halisi kama kwenye jumba la sanaa (Modern African Art Gallery)
+ * Clean, physical-looking wooden frames.
+ * No strings, nails, ropes or swinging mechanism.
  */
-
-/* =========================================================
-   LOMA — WOODEN GALLERY CARD
-   Desktop: 4 normal-sized cards in one horizontal row
-========================================================= */
 
 .wooden-frame-wrapper {
   position: relative;
-
-  /* The grid controls the actual card width */
   width: 100%;
   min-width: 0;
-
+  max-width: none;
   box-sizing: border-box;
-
   padding: 16px;
 
-  /* African dark polished wood */
   background:
     linear-gradient(
       135deg,
@@ -962,7 +920,6 @@ textarea.form-control {
     );
 
   border: 1px solid rgba(255, 226, 185, 0.25);
-
   border-radius: var(--radius-md);
 
   box-shadow:
@@ -972,7 +929,6 @@ textarea.form-control {
     inset 0 -2px 5px rgba(0, 0, 0, 0.45);
 
   overflow: hidden;
-
   display: flex;
   flex-direction: column;
 
@@ -981,54 +937,35 @@ textarea.form-control {
     box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-
-/* =========================================================
-   WOOD GRAIN
-========================================================= */
-
 .wooden-frame-wrapper::before {
   content: "";
-
   position: absolute;
   inset: 0;
-
+  z-index: 1;
   pointer-events: none;
-
   opacity: 0.22;
-
   background:
     repeating-linear-gradient(
       8deg,
-      transparent 0px,
+      transparent 0,
       transparent 7px,
       rgba(255, 220, 170, 0.08) 8px,
       transparent 10px,
       transparent 20px
     );
-
   mix-blend-mode: overlay;
-
-  z-index: 1;
 }
-
-
-/* =========================================================
-   POLISHED WOOD / GLASS REFLECTION
-========================================================= */
 
 .wooden-frame-wrapper::after {
   content: "";
-
   position: absolute;
-
   top: -40%;
   left: -70%;
-
   width: 55%;
   height: 180%;
-
+  z-index: 5;
+  pointer-events: none;
   transform: rotate(25deg);
-
   background:
     linear-gradient(
       90deg,
@@ -1038,24 +975,12 @@ textarea.form-control {
       rgba(255, 255, 255, 0.06) 75%,
       transparent 100%
     );
-
   filter: blur(2px);
-
-  pointer-events: none;
-
   transition: left 0.8s ease;
-
-  z-index: 5;
 }
-
-
-/* =========================================================
-   HOVER EFFECT
-========================================================= */
 
 .wooden-frame-wrapper:hover {
   transform: translateY(-8px);
-
   box-shadow:
     0 30px 60px rgba(35, 20, 10, 0.38),
     0 10px 20px rgba(0, 0, 0, 0.22),
@@ -1063,29 +988,20 @@ textarea.form-control {
     inset 0 -2px 5px rgba(0, 0, 0, 0.45);
 }
 
-
 .wooden-frame-wrapper:hover::after {
   left: 130%;
 }
 
-
-/* =========================================================
-   INNER IVORY MATBOARD
-========================================================= */
-
 .wooden-frame-inner {
   position: relative;
-
+  z-index: 2;
   width: 100%;
   min-width: 0;
   max-width: 100%;
-
   box-sizing: border-box;
-
-  background-color: #f7f4ea;
-
   padding: 12px;
 
+  background-color: #f7f4ea;
   border-radius: 4px;
 
   box-shadow:
@@ -1094,182 +1010,95 @@ textarea.form-control {
     0 0 0 1px #a4813f;
 
   overflow: hidden;
-
   display: flex;
   flex-direction: column;
-
-  z-index: 2;
 }
-
-
-/* =========================================================
-   ARTWORK
-========================================================= */
 
 .wooden-frame-artwork {
   position: relative;
-
   width: 100%;
   min-width: 0;
   max-width: 100%;
-
-  overflow: hidden;
-
-  border-radius: 2px;
-
   aspect-ratio: 4 / 3;
-
-  box-shadow:
-    inset 0 2px 6px rgba(0, 0, 0, 0.3);
-
-  background-color: #121c17;
-
   flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 2px;
+  background-color: #121c17;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3);
 }
-
 
 .wooden-frame-artwork img {
   display: block;
-
   width: 100%;
   height: 100%;
-
   max-width: 100%;
-
   object-fit: cover;
-
-  transition:
-    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-
-.wooden-frame-wrapper:hover
-.wooden-frame-artwork img {
+.wooden-frame-wrapper:hover .wooden-frame-artwork img {
   transform: scale(1.05);
 }
 
-
-/* =========================================================
-   CAPTION
-========================================================= */
-
 .wooden-frame-caption {
   width: 100%;
-
   box-sizing: border-box;
-
   padding: 14px 4px 4px;
-
   text-align: left;
 }
 
-
 .wooden-frame-category {
   display: block;
-
-  font-size: 0.7rem;
-
-  font-weight: 700;
-
-  text-transform: uppercase;
-
-  letter-spacing: 0.15em;
-
-  color: var(--color-accent);
-
   margin-bottom: 4px;
+  color: var(--color-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
-
 .wooden-frame-title {
-  font-family: var(--font-heading);
-
-  font-size: var(--text-lg);
-
-  color: var(--color-primary-dark);
-
   margin: 0 0 6px;
-
+  color: var(--color-primary-dark);
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
   line-height: 1.25;
 }
 
-
 .wooden-frame-desc {
-  font-size: 0.8rem;
-
-  color: var(--color-text-muted);
-
-  line-height: 1.55;
-
   margin: 0 0 12px;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
 }
-
 
 .wooden-frame-cta {
   display: inline-flex;
-
   align-items: center;
-
   gap: 0.35rem;
-
-  font-size: 0.75rem;
-
-  font-weight: 700;
-
-  text-transform: uppercase;
-
-  letter-spacing: 0.08em;
-
   color: var(--color-primary);
-
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   transition: color var(--transition-fast);
 }
-
 
 .wooden-frame-cta:hover {
   color: var(--color-accent);
 }
 
-
-/* =========================================================
-   DESKTOP GALLERY
-   4 NORMAL-SIZED CARDS
-========================================================= */
-
+/* Desktop: four substantial cards without allowing them to collapse into thin strips. */
 .gallery-track {
   display: grid;
-
-  /*
-    Four equal cards.
-
-    At 1200px:
-    approximately 279px each.
-
-    At smaller desktop widths:
-    cards automatically become slightly smaller
-    instead of becoming extremely thin.
-  */
-  grid-template-columns:
-    repeat(4, minmax(250px, 1fr));
-
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
   gap: 28px;
-
-  width: min(1200px, calc(100% - 48px));
-
+  width: min(1200px, 100%);
   margin: 0 auto;
-
-  padding: 0;
-
+  padding: 0 24px;
   box-sizing: border-box;
-
   align-items: stretch;
 }
-
-
-/* =========================================================
-   IMPORTANT:
-   Make every direct card occupy its grid column
-========================================================= */
 
 .gallery-track > .wooden-frame-wrapper {
   width: 100%;
@@ -1277,161 +1106,60 @@ textarea.form-control {
   max-width: none;
 }
 
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 1100px) {
-
+/* Switch before four cards become too narrow. */
+@media (max-width: 1150px) {
   .gallery-track {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-
-    width: min(760px, calc(100% - 40px));
-
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    width: min(760px, 100%);
     gap: 24px;
+    padding: 0 20px;
   }
-
 }
 
-
-/* =========================================================
-   MOBILE
-   Keep cards normal-sized.
-   Do NOT use the desktop 4-column grid here.
-========================================================= */
-
-/*@media (max-width: 768px) {
-
-  .gallery-track {
-    display: flex;
-
-    flex-direction: row;
-
-    gap: 18px;
-
-    width: 100%;
-
-    max-width: 100%;
-
-    margin: 0;
-
-    padding:
-      0 20px;
-
-    overflow-x: auto;
-
-    overflow-y: hidden;
-
-    scroll-snap-type: x mandatory;
-
-    -webkit-overflow-scrolling: touch;
-
-    scrollbar-width: none;
-  }
-
-
-  .gallery-track::-webkit-scrollbar {
-    display: none;
-  }
-
-
-  .gallery-track > .wooden-frame-wrapper {
-    flex: 0 0 82%;
-
-    width: 82%;
-
-    max-width: 82%;
-
-    min-width: 82%;
-
-    scroll-snap-align: center;
-  }
-
-}
-*/
-
-/* =========================================================
-   SMALL PHONES
-========================================================= */
-
-
-/*Phone display customization*/
+/* Mobile: fixed card width + horizontal movement; cards never shrink. */
 @media (max-width: 768px) {
-  /*gallery section */
-  
   .gallery-section {
     width: 100%;
     max-width: 100%;
-
     overflow: hidden;
-
     padding: 30px 0 80px;
   }
 
   .gallery-track {
     display: flex;
     flex-direction: row;
+    gap: 18px;
+    width: max-content;
     max-width: none;
     margin: 0;
-
-    gap: 18px;
-
-    overflow: visible;
-
-    width: max-content;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding: 0 32px;
     box-sizing: border-box;
-
+    overflow: visible;
     touch-action: pan-y;
     cursor: grab;
-
-    transition: 
-            transform 0.75s cubic-bezier(
-              0.22,
-              1,
-              0.36,
-              1
-            );
-
+    transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  .gallery-track.is-dragging{
-    cursor: grabbing;   /*makes grabbing feel more immediate*/
+  .gallery-track.is-dragging {
+    cursor: grabbing;
     transition: none;
   }
-  /* CARD SHRINKING PART      _____prevents cards from shrinking_______*/
-  .wooden-frame-wrapper{
+
+  .gallery-track > .wooden-frame-wrapper {
     flex: 0 0 290px;
     width: 290px;
     min-width: 290px;
     max-width: 290px;
-    /*padding: 12px;*/
-    /*border-radius: 18px;*/
-    box-sizing: border-box;
-  }
-
-  /*woooden frame */
-  .wooden-frame-wrapper{
     padding: 12px;
     border-radius: 18px;
     box-sizing: border-box;
-    max-width: 290px;
   }
 
-  .wooden-frame-wrapper:hover{
+  .wooden-frame-wrapper:hover {
     transform: none;
   }
 
-  .wooden-frame-inner{
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
-
-  .wooden-frame-wrapper .wooden-frame-inner{
+  .wooden-frame-inner {
     width: 100%;
     min-width: 0;
     box-sizing: border-box;
@@ -1441,19 +1169,46 @@ textarea.form-control {
 
   .wooden-frame-artwork {
     width: 100%;
-  
-    overflow: hidden;
-  
     aspect-ratio: 4 / 3;
-  
+    overflow: hidden;
   }
 
   .wooden-frame-artwork img {
     width: 100%;
+    height: 100%;
     box-sizing: border-box;
     object-fit: cover;
   }
 }
 
+@media (max-width: 380px) {
+  .gallery-track {
+    gap: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
+  .gallery-track > .wooden-frame-wrapper {
+    flex-basis: 270px;
+    width: 270px;
+    min-width: 270px;
+    max-width: 270px;
+  }
+}
 
+@media (prefers-reduced-motion: reduce) {
+  .wooden-frame-wrapper,
+  .wooden-frame-wrapper::after,
+  .wooden-frame-artwork img,
+  .gallery-track {
+    transition: none;
+  }
+
+  .wooden-frame-wrapper:hover {
+    transform: none;
+  }
+
+  .wooden-frame-wrapper:hover .wooden-frame-artwork img {
+    transform: none;
+  }
+}
