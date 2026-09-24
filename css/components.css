@@ -767,7 +767,7 @@ textarea.form-control {
 /* Kitanzi cha dhahabu/mkeka wa ndani (Matboard / Inner bevel border) */
 .wooden-frame-inner {
   position: relative;
-  width: 100%;
+  width: 50%;
   min-width: 0;
   box-sizing: border-box;
   background-color: #f7f4ea; /* Fine ivory gallery matboard */
