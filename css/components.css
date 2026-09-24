@@ -858,7 +858,7 @@ textarea.form-control {
       repeat(4, minmax(260, 1fr));
   
   gap: 28px;
-  width: 100%;
+  width: 50%;
   max-width: 120px;
   margin: 0 auto;
   padding: 0 24px;
