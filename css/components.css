@@ -680,7 +680,7 @@ textarea.form-control {
 
 .wooden-frame-wrapper {
   position: relative;
-  width: 100%;
+  width: 50%;
   min-width: 0;
   box-sizing: border-box;
   background: linear-gradient(135deg, #442a17 0%, #2f1c0f 40%, #1f1209 100%);
