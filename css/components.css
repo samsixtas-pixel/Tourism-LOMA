@@ -499,7 +499,7 @@ textarea.form-control {
    * Fully transparent overlay to make the Maasai blanket cloth visible with 100% clarity.
    * Zoomed out blanket pattern (background-size: 160px auto) so repeating plaid checks are crisp & clear.
    */
-  background-image: url("/assets/images/zanzibar1.jpg");
+  background-image: url("../assets/images/zanzibar1.jpg");
   background-size: 160px auto;
   background-position: center center;
   background-repeat: repeat;
