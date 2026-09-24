@@ -680,8 +680,9 @@ textarea.form-control {
 
 .wooden-frame-wrapper {
   position: relative;
-  width: 50%;
-  min-width: 0;
+  width: 260px;
+  min-width: 260px;
+  max-width: 260px;
   box-sizing: border-box;
   background: linear-gradient(135deg, #442a17 0%, #2f1c0f 40%, #1f1209 100%);
   border-radius: var(--radius-md);
@@ -858,8 +859,8 @@ textarea.form-control {
       repeat(4, 260px);
   
   gap: 28px;
-  width: 50%;
-  max-width: 120px;
+  width: fit-content;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 24px;
   box-sizing: border-box;
