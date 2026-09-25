@@ -201,7 +201,7 @@
   background-color: #122119;
   background-image: 
     linear-gradient(180deg, rgba(13, 40, 28, 0.42) 0%, rgba(13, 40, 28, 0.68) 100%),
-    url('../assets/images/hero-kilimanjaro.jpg');
+    url('../assets/images/african-home.jpg');
   background-size: cover;
   background-position: center 32%;
   background-repeat: no-repeat;
@@ -1190,7 +1190,346 @@
   margin-right: auto;
 }
 
+/* =========================================================
+   ZANZIBAR HERO — BACKGROUND + CLAY/GLASS BOX
+   ========================================================= */
+
+.zanzibar-clay-hero {
+  position: relative;
+  width: 100%;
+  min-height: 760px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  /* Fallback if image fails */
+  background: #123c35;
+}
+
+/* Zanzibar background image */
+.zanzibar-clay-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/asset/image/zanzibar1.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  transform: scale(1.02);
+
+  z-index: -3;
+}
+
+/* Dark cinematic overlay */
+.zanzibar-clay-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 30, 25, 0.68) 0%,
+      rgba(5, 30, 25, 0.42) 42%,
+      rgba(5, 30, 25, 0.20) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.18) 0%,
+      rgba(0, 0, 0, 0.08) 45%,
+      rgba(0, 0, 0, 0.42) 100%
+    );
+
+  pointer-events: none;
+  z-index: -2;
+}
+
+
+/* =========================================================
+   HERO CONTAINER
+   ========================================================= */
+
+.zanzibar-clay-hero .container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  min-height: 760px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  box-sizing: border-box;
+
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+
+/* =========================================================
+   CLAY + GLASS CONTENT BOX
+   ========================================================= */
+
+.clay-glass-island-box {
+  position: relative;
+
+  width: min(820px, calc(100% - 2rem));
+
+  padding: clamp(32px, 5vw, 68px);
+
+  margin-left: 0;
+  margin-right: auto;
+
+  box-sizing: border-box;
+
+  text-align: left;
+  color: #ffffff;
+
+  border-radius: 34px;
+
+  /* Glassmorphism */
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.22),
+      rgba(255, 255, 255, 0.08)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.30);
+
+  backdrop-filter: blur(18px) saturate(135%);
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+
+  /* Clay-like depth */
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.32),
+    0 15px 35px rgba(0, 0, 0, 0.20),
+    inset 0 1px 2px rgba(255, 255, 255, 0.45),
+    inset 0 -15px 30px rgba(0, 0, 0, 0.10);
+
+  overflow: hidden;
+}
+
+
+/* Soft light reflection inside glass */
+.clay-glass-island-box::before {
+  content: "";
+
+  position: absolute;
+  top: -35%;
+  left: -10%;
+
+  width: 75%;
+  height: 75%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0.08) 35%,
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* Make content stay above glass reflection */
+.clay-glass-island-box > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================================
+   BADGE
+   ========================================================= */
+
+.clay-glass-island-box .clay-glass-tag {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 9px;
+
+  margin-left: 0;
+  margin-bottom: 24px;
+
+  padding: 10px 16px;
+
+  color: #fff;
+
+  background: rgba(255, 255, 255, 0.13);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  border-radius: 999px;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.25),
+    0 8px 20px rgba(0, 0, 0, 0.12);
+
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.clay-glass-island-box h1 {
+  max-width: 760px;
+
+  margin: 0 0 22px;
+
+  color: #ffffff;
+
+  font-size: clamp(2.4rem, 5vw, 5rem);
+  line-height: 0.98;
+
+  letter-spacing: -0.035em;
+
+  text-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.28);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.clay-glass-island-box p {
+  max-width: 680px;
+
+  margin-left: 0;
+  margin-right: auto;
+  margin-bottom: 32px;
+
+  color: rgba(255, 255, 255, 0.90);
+
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  line-height: 1.75;
+
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================================================
+   BUTTON AREA
+   ========================================================= */
+
+.clay-glass-island-box div[style*="justify-content"] {
+  display: flex;
+
+  justify-content: flex-start !important;
+
+  align-items: center;
+
+  gap: 14px;
+
+  flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .zanzibar-clay-hero {
+    min-height: 680px;
+  }
+
+  .zanzibar-clay-hero .container {
+    min-height: 680px;
+
+    padding:
+      70px
+      20px;
+  }
+
+  .clay-glass-island-box {
+    width: 100%;
+
+    padding: 34px 24px;
+
+    border-radius: 26px;
+  }
+
+  .clay-glass-island-box h1 {
+    font-size: clamp(2.2rem, 10vw, 3.5rem);
+  }
+
+  .clay-glass-island-box p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .zanzibar-clay-hero {
+    min-height: 650px;
+  }
+
+  .zanzibar-clay-hero .container {
+    min-height: 650px;
+
+    padding:
+      55px
+      16px;
+  }
+
+  .clay-glass-island-box {
+    padding: 28px 20px;
+
+    border-radius: 22px;
+  }
+
+  .clay-glass-island-box .clay-glass-tag {
+    font-size: 0.78rem;
+
+    padding: 8px 12px;
+  }
+
+  .clay-glass-island-box h1 {
+    font-size: 2.15rem;
+  }
+
+  .clay-glass-island-box p {
+    margin-bottom: 26px;
+  }
+
+  .clay-glass-island-box div[style*="justify-content"] {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .clay-glass-island-box .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 /* Kwenye ukurasa wa Zanzibar (Claymorphism Box) */
+
 .zanzibar-clay-hero .container {
   display: flex;
   justify-content: flex-start;
@@ -1214,18 +1553,4 @@
 
 .clay-glass-island-box div[style*="justify-content"] {
   justify-content: flex-start !important;
-}
-
-/* Kwenye ukurasa wa Tour Detail */
-.tour-hero .container {
-  display: flex;
-  justify-content: flex-start;
-  padding-left: clamp(1rem, 2.5vw, 3rem);
-}
-
-.tour-hero-content-right {
-  margin-left: 0;
-  margin-right: auto;
-  max-width: 800px;
-  text-align: left;
 }
