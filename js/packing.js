@@ -1,14 +1,7 @@
 /**
- * ============================================================
  * LOMA ADVENTURES — PACKING ASSISTANT
- * ============================================================
- * "What Should I Pack?"
- * Hutoa orodha iliyopendekezwa ya nguo na vifaa muhimu kulingana na:
- * 1. Aina ya Safari (Wildlife Safari, Kilimanjaro Climb, Zanzibar Beach)
- * 2. Mwezi wa safari (Kiangazi au Masika)
- * 3. Idadi ya siku
+ * Generates a packing checklist and sends it to WhatsApp.
  */
-
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('packingAssistantForm');
   const resultsContainer = document.getElementById('packingAssistantResults');
@@ -63,10 +56,40 @@ document.addEventListener('DOMContentLoaded', () => {
       `).join('')}
       <div style="margin-top: 1.25rem; padding-top: 0.85rem; border-top: 1px dashed var(--color-border); display: flex; align-items: center; justify-content: space-between;">
         <span style="font-size: 0.75rem; color: var(--color-text-muted);">Luggage tip: Soft duffel bags are required on internal bush flights (max 15kg).</span>
+        <button type="button" id="sendPackingToWA" class="btn btn-primary btn-sm">Send to WhatsApp</button>
         <button type="button" onclick="window.print()" class="btn btn-outline-dark btn-sm">Print Checklist</button>
       </div>
     `;
 
     resultsContainer.innerHTML = html;
+
+    const sendBtn = document.getElementById('sendPackingToWA');
+    if (sendBtn) {
+      sendBtn.addEventListener('click', () => {
+        const tripLabel = {
+          safari: "Wildlife Safari (4WD Game Drives)",
+          kilimanjaro: "Mount Kilimanjaro Trekking",
+          zanzibar: "Zanzibar Island & Beach Retreat"
+        }[tripType] || tripType;
+
+        const durationLabel = {
+          "5": "Up to 5 Days",
+          "7": "6 – 8 Days",
+          "12": "9 – 14 Days"
+        }[duration] || `${duration} Days`;
+
+        const msg = window.formatWhatsAppMessage({
+          title: "Packing Assistant — Follow-Up",
+          intro: "I generated a packing list using your Packing Assistant. Could you review it and advise?",
+          fields: [
+            { label: "Trip Style", value: tripLabel },
+            { label: "Trip Duration", value: durationLabel }
+          ],
+          outro: "Please confirm whether any additional gear, medication, or permits are needed for my itinerary."
+        });
+
+        window.sendWhatsAppMessage(msg);
+      });
+    }
   });
 });

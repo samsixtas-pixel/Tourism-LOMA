@@ -166,7 +166,7 @@ p:last-child {
     --container-max: 1540px;
   }
   img {
-    image-rendering: -webkit-optimize-contrast;
+    image-rendering: auto;
   }
 }
 

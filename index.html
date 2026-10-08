@@ -25,12 +25,8 @@
   <title>LOMA Adventures | Explore. Learn. Experience. Create Memories.</title>
   <meta name="description" content="Discover authentic Tanzania with LOMA Adventures. Curated African safaris in Serengeti, Mount Kilimanjaro climbs, Zanzibar beach retreats, and meaningful cultural journeys.">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/base.css">
@@ -1427,13 +1423,13 @@
   <script src="js/main.js"></script>
   <script src="js/navigation.js"></script>
   <script src="js/search.js"></script>
+  <script src="js/whatsapp.js"></script>
   <script src="js/planner.js"></script>
   <script src="js/trip-builder.js"></script>
   <script src="js/seasonal.js"></script>
   <script src="js/packing.js"></script>
   <script src="js/save-compare.js"></script>
   <script src="js/forms.js"></script>
-  <script src="js/whatsapp.js"></script>
 
  <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -1839,11 +1835,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   <script>
     const drawer =
-           document.getElementById("mobileDrawer");
+          document.getElementById("mobileDrawer");
     const overlay = 
           document.getElementById("drawerOverlay");
     const closeButton = 
-          document.getElemntById("drawerClose");
+          document.getElementById("drawerClose");
           
     function openDrawer() {
       drawer.classList.add("active");
